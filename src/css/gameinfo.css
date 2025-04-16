@@ -1,0 +1,471 @@
+.game-info-f {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    padding: 100px 827px;
+    position: relative;
+  }
+  
+  .game-info-f .div {
+    color: #000000;
+    font-family: "NanumGothic-Regular", Helvetica;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 64px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .frame {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: -453.00px;
+    margin-right: -453.00px;
+    position: relative;
+    width: 1172px;
+  }
+  
+  .game-info-f .frame-2 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    gap: 30px;
+    height: 248px;
+    padding: 0px 15px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .image {
+    height: 100px;
+    position: relative;
+    width: 300px;
+  }
+  
+  .game-info-f .frame-3 {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 30px;
+    position: relative;
+  }
+  
+  .game-info-f .text-wrapper-2 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .p {
+    align-self: stretch;
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 28.8px;
+    position: relative;
+  }
+  
+  .game-info-f .frame-4 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 30px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .frame-5 {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-grow: 1;
+    gap: 30px;
+    position: relative;
+  }
+  
+  .game-info-f .button {
+    all: unset;
+    align-items: center;
+    background-color: #9fbde9;
+    border: 1px solid;
+    border-color: #979797;
+    border-radius: var(--size-radius-200);
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: var(--size-space-200);
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--size-space-300);
+    position: relative;
+  }
+  
+  .game-info-f .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    color: var(--m3syslight-medium-contraston-surface);
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .frame-6 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 60px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .frame-7 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    padding: 0px 10px;
+    position: relative;
+    width: 420px;
+  }
+  
+  .game-info-f .frame-8 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .frame-9 {
+    align-items: center;
+    border: 1px solid;
+    border-color: #000000;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    gap: 30px 30px;
+    justify-content: center;
+    margin-bottom: -1.00px;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .game-info-f .text-wrapper-3 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 14.4px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 14.4px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .text-wrapper-4 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 43.2px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 43.2px;
+    margin-top: -0.50px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .text-wrapper-5 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 26.4px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 26.4px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .line {
+    align-self: stretch;
+    position: relative;
+    width: 2px;
+  }
+  
+  .game-info-f .frame-10 {
+    align-items: center;
+    border: 1px solid;
+    border-color: #000000;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    gap: 30px 30px;
+    justify-content: center;
+    margin-bottom: -1.00px;
+    margin-left: -38.50px;
+    margin-right: -38.50px;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .game-info-f .text-wrapper-6 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 11.5px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .text-wrapper-7 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 40.8px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 40.8px;
+    margin-top: -0.50px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .text-wrapper-8 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 22.6px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 22.6px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .frame-11 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0px 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .img {
+    align-self: stretch;
+    height: 721px;
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .frame-12 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 100px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .image-2 {
+    height: 410px;
+    object-fit: cover;
+    position: relative;
+    width: 610px;
+  }
+  
+  .game-info-f .frame-wrapper {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .game-info-f .frame-13 {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    position: relative;
+    width: 246px;
+  }
+  
+  .game-info-f .frame-14 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 0px 25px 0px 0px;
+    position: relative;
+  }
+  
+  .game-info-f .text-wrapper-9 {
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 24px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .game-info-f .frame-15 {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .game-info-f .frame-16 {
+    align-items: flex-start;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    padding: 15px 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .frame-17 {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 46px;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .product-info-card {
+    align-items: flex-start;
+    background-color: var(--color-background-default-default);
+    border: 1px solid;
+    border-color: var(--color-border-default-default);
+    border-radius: var(--size-radius-200);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-space-400);
+    padding: var(--size-space-400);
+    position: relative;
+    width: 318px;
+  }
+  
+  .game-info-f .image-3 {
+    align-self: stretch;
+    /* background-image: url(./image-3.png); */
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 247px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .body {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: var(--size-space-200);
+    position: relative;
+    width: 208px;
+  }
+  
+  .game-info-f .text-instance {
+    align-self: stretch !important;
+    display: flex !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+  
+  .game-info-f .design-component-instance-node {
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 1 !important;
+    display: -webkit-box !important;
+    flex: 1 !important;
+    font-family: "NanumGothic-Bold", Helvetica !important;
+    font-size: 20px !important;
+    font-style: unset !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    line-height: 28.0px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: unset !important;
+    width: unset !important;
+  }
+  
+  .game-info-f .image-4 {
+    align-self: stretch;
+    /* background-image: url(./image-4.png); */
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 247px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .game-info-f .image-5 {
+    align-self: stretch;
+    /* background-image: url(./image-5.png); */
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 247px;
+    position: relative;
+    width: 100%;
+  }
+  
