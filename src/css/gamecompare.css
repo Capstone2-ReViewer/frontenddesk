@@ -83,7 +83,7 @@
 
 .game-compare-f .text-wrapper-2 {
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
+  /* -webkit-line-clamp: 1; */
   color: #000000;
   display: -webkit-box;
   font-family: "NanumGothic-Bold", Helvetica;
