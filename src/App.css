@@ -317,7 +317,6 @@ You can apply the theme on any DOM node, not just the `body`
   --color-text-default-secondary: var(--color-primitives-white-500);
 }
 
-
 :root {
   --body-base-font-family: "Inter", Helvetica;
   --body-base-font-size: 16px;
@@ -730,6 +729,7 @@ You can apply the theme on any DOM node, not just the `body`
   --color-text-default-tertiary: var(--color-primitives-white-400);
   --color-text-neutral-default: var(--color-primitives-slate-200);
 }
+
 
 :root {
   --body-base-font-family: "Inter", Helvetica;

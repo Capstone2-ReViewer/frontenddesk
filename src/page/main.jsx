@@ -8,11 +8,11 @@ const Main = () => {
   return (
     <div className="main">
       <div className="div">
-        <button className="button">
-          <button className="button-2">로그인 / 회원가입</button>
-        </button>
+        <div className="login-button">
+          <button className="button">로그인 / 회원가입</button>
+        </div>
 
-        <div className="search-bar">
+        <div className="main-searchbar">
           <div className="state-layer-2">
             <div className="content">
               <div className="supporting-text">여기가 검색창입니다!</div>
@@ -28,8 +28,8 @@ const Main = () => {
           </div>
         </div>
 
-        <div className="frame">
-          <div className="frame-2">
+        <div className="main-under-f">
+          <div className="main-under-info">
             <div className="product-info-card">
               <div className="image" />
 
@@ -67,8 +67,8 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="button-wrapper">
-            <button className="button-3">게임순위표 보러가기</button>
+          <div className="g-ranking-button">
+            <div className="g-ranking">게임순위표 보러가기</div>
           </div>
         </div>
 

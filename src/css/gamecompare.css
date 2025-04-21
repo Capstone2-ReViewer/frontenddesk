@@ -1,189 +1,215 @@
 .game-compare-f {
-    align-items: center;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    padding: 100px 827px;
-    position: relative;
-  }
-  
-  .game-compare-f .text-wrapper {
-    color: #000000;
-    font-family: "NanumGothic-Regular", Helvetica;
-    font-size: 64px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 64px;
-    margin-top: -1.00px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .game-compare-f .frame {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 30px;
-    margin-left: -478.00px;
-    margin-right: -478.00px;
-    padding: 0px 0px 30px;
-    position: relative;
-  }
-  
-  .game-compare-f .div {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 30px;
-    padding: 40px 0px 0px;
-    position: relative;
-  }
-  
-  .game-compare-f .frame-2 {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    gap: 30px;
-    position: relative;
-    width: 100%;
-  }
-  
-  .game-compare-f .text-wrapper-2 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 24px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .game-compare-f .frame-3 {
-    align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .game-compare-f .image {
-    height: 100px;
-    position: relative;
-    width: 300px;
-  }
-  
-  .game-compare-f .text-wrapper-3 {
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    color: #000000;
-    display: -webkit-box;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 24px;
-    overflow: hidden;
-    position: relative;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: fit-content;
-  }
-  
-  .game-compare-f .frame-4 {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .game-compare-f .frame-5 {
-    align-items: center;
-    display: inline-flex;
-    flex: 0 0 auto;
-    gap: 30px;
-    position: relative;
-  }
-  
-  .game-compare-f .rectangle-1 {
-    left: 19px !important;
-  }
-  
-  .game-compare-f .rectangle-instance {
-    align-self: stretch !important;
-    height: 49px !important;
-    width: 100% !important;
-  }
-  
-  .game-compare-f .rectangle-1-instance {
-    left: 125px !important;
-  }
-  
-  .game-compare-f .design-component-instance-node {
-    font-size: 20px !important;
-    height: 20px !important;
-    left: 27px !important;
-    line-height: 20px !important;
-    top: 14px !important;
-  }
-  
-  .game-compare-f .rectangle-2 {
-    font-size: 16px !important;
-    height: 16px !important;
-    left: 21px !important;
-    line-height: 16px !important;
-    top: 16px !important;
-  }
-  
-  .game-compare-f .rectangle-3 {
-    height: 49px !important;
-    width: 364px !important;
-  }
-  
-  .game-compare-f .rectangle-4 {
-    left: 111px !important;
-  }
-  
-  .game-compare-f .button {
-    all: unset;
-    align-items: center;
-    align-self: stretch;
-    background-color: #9fbde9;
-    border: 1px solid;
-    border-color: #979797;
-    border-radius: var(--size-radius-200);
-    box-sizing: border-box;
-    display: flex;
-    gap: var(--size-space-200);
-    justify-content: center;
-    overflow: hidden;
-    padding: var(--size-space-300);
-    position: relative;
-    width: 47px;
-  }
-  
-  .game-compare-f .button-2 {
-    all: unset;
-    box-sizing: border-box;
-    color: var(--m3syslight-medium-contraston-surface);
-    flex: 1;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 20px;
-    position: relative;
-    text-align: center;
-  }
-  
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  padding: 100px 827px;
+  position: relative;
+}
+
+.game-compare-f .text-wrapper {
+  color: #000000;
+  font-family: "NanumGothic-Regular", Helvetica;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 64px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.game-compare-f .g-com-main-f {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 30px;
+  margin-left: -478.00px;
+  margin-right: -478.00px;
+  padding: 0px 0px 30px;
+  position: relative;
+}
+
+.game-compare-f .g-com-main-align-f {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px 0px 0px;
+  position: relative;
+}
+
+.game-compare-f .g-com-game {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.game-compare-f .div {
+  color: #000000;
+  font-family: "NanumGothic-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.game-compare-f .g-com-info {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+}
+
+.game-compare-f .image {
+  height: 100px;
+  position: relative;
+  width: 300px;
+}
+
+.game-compare-f .text-wrapper-2 {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  color: #000000;
+  display: -webkit-box;
+  font-family: "NanumGothic-Bold", Helvetica;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 24px;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.game-compare-f .g-com {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  position: relative;
+}
+
+.game-compare-f .g-com-gs {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 30px;
+  position: relative;
+}
+
+.game-compare-f .g-com-g-score {
+  left: 19px !important;
+}
+
+.game-compare-f .rectangle {
+  align-self: stretch !important;
+  height: 49px !important;
+  width: 100% !important;
+}
+
+.game-compare-f .g-com-g1-score {
+  left: 125px !important;
+}
+
+.game-compare-f .g-com-score-instance {
+  font-size: 20px !important;
+  height: 20px !important;
+  left: 27px !important;
+  line-height: 20px !important;
+  top: 14px !important;
+}
+
+.game-compare-f .g-com-g-score-instance {
+  font-size: 16px !important;
+  height: 16px !important;
+  left: 21px !important;
+  line-height: 16px !important;
+  top: 16px !important;
+}
+
+.game-compare-f .g-com-g1-score-instance {
+  height: 49px !important;
+  width: 364px !important;
+}
+
+.game-compare-f .design-component-instance-node {
+  left: 111px !important;
+}
+
+.game-compare-f .g-com-delete {
+  align-items: center;
+  align-self: stretch;
+  background-color: #9fbde9;
+  border: 1px solid;
+  border-color: #979797;
+  border-radius: var(--size-radius-200);
+  display: flex;
+  gap: var(--size-space-200);
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--size-space-300);
+  position: relative;
+  width: 47px;
+}
+
+.game-compare-f .button {
+  all: unset;
+  box-sizing: border-box;
+  color: var(--m3syslight-medium-contraston-surface);
+  flex: 1;
+  font-family: "NanumGothic-Bold", Helvetica;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.game-compare-f .button-wrapper {
+  all: unset;
+  align-items: center;
+  align-self: stretch;
+  background-color: #9fbde9;
+  border: 1px solid;
+  border-color: #979797;
+  border-radius: var(--size-radius-200);
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--size-space-200);
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--size-space-300);
+  position: relative;
+  width: 47px;
+}
+
+.game-compare-f .g-com-score-2 {
+  font-family: "NanumGothic-Regular", Helvetica !important;
+  font-weight: 400 !important;
+}
+
+.game-compare-f .g-com-score-3 {
+  font-family: "NanumGothic-Regular", Helvetica !important;
+  font-weight: 400 !important;
+  left: 19px !important;
+}

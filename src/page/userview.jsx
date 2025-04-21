@@ -6,70 +6,62 @@ const UserViewF = () => {
     <div className="user-view-f">
       <div className="text-wrapper">회원 정보 조회</div>
 
-      <div className="input-field">
-        <div className="label">아이디</div>
+      <div className="div">
+        <div className="text-wrapper-2">아이디</div>
 
-        <div className="input">
-          <div className="value">{""}</div>
-        </div>
+        <div className="div-2" />
       </div>
 
-      <div className="input-field">
-        <div className="label">이름</div>
+      <div className="div">
+        <div className="text-wrapper-2">이름</div>
 
-        <div className="input">
-          <div className="value">{""}</div>
-        </div>
+        <div className="div-2" />
       </div>
 
-      <div className="input-field">
-        <div className="label">닉네임</div>
+      <div className="div">
+        <div className="text-wrapper-2">닉네임</div>
 
-        <div className="input">
-          <div className="value">{""}</div>
-        </div>
+        <div className="div-2" />
       </div>
 
-      <div className="input-field">
-        <div className="label">나이</div>
+      <div className="div">
+        <div className="text-wrapper-2">나이</div>
 
-        <div className="input">
-          <div className="value">{""}</div>
-        </div>
+        <div className="div-2" />
       </div>
 
-      <div className="frame">
-        <div className="div">성별</div>
+      <div className="user-gender-f">
+        <div className="text-wrapper-3">성별</div>
 
-        <div className="radio-field">
+        <div className="checkbox-and-label-wrapper">
           <div className="checkbox-and-label">
             <div className="radio">
               <div className="radio-2" />
             </div>
 
-            <div className="label-2">남자</div>
+            <div className="label">남자</div>
           </div>
         </div>
 
-        <div className="radio-field">
+        <div className="checkbox-and-label-wrapper">
           <div className="checkbox-and-label-2">
             <div className="radio-3" />
 
-            <div className="label-2">여자</div>
+            <div className="label">여자</div>
           </div>
         </div>
       </div>
 
-      <div className="frame-2">
-        <div className="frame-3">
-          <div className="text-wrapper-2">선호장르</div>
+      <div className="user-genre-main-f">
+        <div className="div-3">
+          <div className="text-wrapper-4">선호장르</div>
 
-          <div className="frame-4">
+          <div className="user-genre-list">
             <div className="checkbox-field">
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">액션</div>
+                <div className="label-2">액션</div>
               </div>
             </div>
 
@@ -77,7 +69,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">판타지</div>
+                <div className="label-2">판타지</div>
               </div>
             </div>
 
@@ -85,7 +77,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">FPS</div>
+                <div className="label-2">FPS</div>
               </div>
             </div>
 
@@ -93,7 +85,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">샌드박스</div>
+                <div className="label-2">샌드박스</div>
               </div>
             </div>
 
@@ -101,7 +93,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">RPG</div>
+                <div className="label-2">RPG</div>
               </div>
             </div>
 
@@ -109,7 +101,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">어드벤처</div>
+                <div className="label-2">어드벤처</div>
               </div>
             </div>
 
@@ -117,21 +109,21 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">MMORPG</div>
+                <div className="label-2">MMORPG</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="frame-3">
-          <div className="text-wrapper-2">비선호장르</div>
+        <div className="div-3">
+          <div className="text-wrapper-4">비선호장르</div>
 
-          <div className="frame-4">
+          <div className="user-genre-list">
             <div className="checkbox-field">
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">액션</div>
+                <div className="label-2">액션</div>
               </div>
             </div>
 
@@ -139,7 +131,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">판타지</div>
+                <div className="label-2">판타지</div>
               </div>
             </div>
 
@@ -147,7 +139,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">FPS</div>
+                <div className="label-2">FPS</div>
               </div>
             </div>
 
@@ -155,7 +147,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">샌드박스</div>
+                <div className="label-2">샌드박스</div>
               </div>
             </div>
 
@@ -163,7 +155,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">RPG</div>
+                <div className="label-2">RPG</div>
               </div>
             </div>
 
@@ -171,7 +163,7 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">어드벤처</div>
+                <div className="label-2">어드벤처</div>
               </div>
             </div>
 
@@ -179,14 +171,14 @@ const UserViewF = () => {
               <div className="checkbox-and-label-2">
                 <div className="checkbox" />
 
-                <div className="label-3">MMORPG</div>
+                <div className="label-2">MMORPG</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="button-group">
+      <div className="user-re-regist">
         <button className="button">
           <button className="button-2">정보 수정</button>
         </button>

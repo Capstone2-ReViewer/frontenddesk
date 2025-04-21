@@ -9,37 +9,37 @@ const GameRankingF = () => {
     <div className="game-ranking-f">
       <div className="text-wrapper">리Viewer</div>
 
-      <div className="frame">
-        <div className="div">
-          <div className="frame-2">
+      <div className="g-ranking-main">
+        <div className="g-ranking-list">
+          <div className="div">
             <div className="text-wrapper-2">1</div>
 
-            <img className="image" alt="Image" />
+            {/* <img className="image" alt="Image" src={image} /> */}
 
             <div className="text-wrapper-2">Monster Hunter Wilds</div>
           </div>
 
-          <div className="frame-2">
+          <div className="div">
             <div className="text-wrapper-2">2</div>
 
-            <img className="image" alt="Image" />
+            {/* <img className="image" alt="Image" src={image2} /> */}
 
             <div className="text-wrapper-2">Palworld</div>
           </div>
 
-          <div className="frame-2">
+          <div className="div">
             <div className="text-wrapper-2">3</div>
 
-            <img className="image" alt="Image" />
+            {/* <img className="image" alt="Image" src={image3} /> */}
 
             <div className="text-wrapper-2">Ready or not</div>
           </div>
         </div>
 
-        <div className="frame-3">
+        <div className="g-ranking-tag-f">
           <div className="text-wrapper-3">선택태그</div>
 
-          <div className="frame-4">
+          <div className="g-ranking-tag-box">
             <div className="checkbox-field">
               <div className="checkbox-and-label">
                 <div className="checkbox" />
@@ -101,5 +101,6 @@ const GameRankingF = () => {
     </div>
   );
 };
+
 
 export default GameRankingF;

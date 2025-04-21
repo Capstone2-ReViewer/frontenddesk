@@ -10,143 +10,143 @@ const GameCompareF = () => {
     <div className="game-compare-f">
       <div className="text-wrapper">리Viewer</div>
 
-      <div className="frame">
-        <div className="div">
-          <div className="frame-2">
-            <div className="text-wrapper-2">1</div>
+      <div className="g-com-main-f">
+        <div className="g-com-main-align-f">
+          <div className="g-com-game">
+            <div className="div">1</div>
 
-            <div className="frame-3">
+            <div className="g-com-info">
               {/* <img className="image" alt="Image" src={image} /> */}
 
-              <div className="text-wrapper-3">Monster Hunter Wilds</div>
+              <div className="text-wrapper-2">Monster Hunter Wilds</div>
             </div>
 
-            <div className="frame-4">
-              <div className="frame-5">
-                {/* <Rectangle />
-                <Rectangle divClassName="rectangle-1" text="리뷰수 : 134" /> */}
+            <div className="g-com">
+              <div className="g-com-gs">
+                {/* <GComScore />
+                <GComScore divClassName="g-com-g-score" text="리뷰수 : 134" /> */}
               </div>
 
-              {/* <Rectangle
-                className="rectangle-instance"
-                divClassName="rectangle-1-instance"
+              {/* <GComScore
+                className="rectangle"
+                divClassName="g-com-g1-score"
                 text="재미 입문용"
               /> */}
             </div>
 
-            <div className="frame-4">
-              <div className="frame-5">
-                {/* <Rectangle
-                  divClassName="design-component-instance-node"
+            <div className="g-com">
+              <div className="g-com-gs">
+                {/* <GComScore
+                  divClassName="g-com-score-instance"
                   text="평균 : 87시간"
                 />
-                <Rectangle
-                  divClassName="rectangle-2"
+                <GComScore
+                  divClassName="g-com-g-score-instance"
                   text="표준편차 : 171.15"
                 /> */}
               </div>
 
-              {/* <Rectangle
-                className="rectangle-3"
-                divClassName="rectangle-4"
+              {/* <GComScore
+                className="g-com-g1-score-instance"
+                divClassName="design-component-instance-node"
                 text="최적화 크래쉬"
               /> */}
             </div>
 
-            <button className="button">
-              <button className="button-2">삭제</button>
-            </button>
+            <div className="g-com-delete">
+              <button className="button">삭제</button>
+            </div>
           </div>
 
-          <div className="frame-2">
-            <div className="text-wrapper-2">2</div>
+          <div className="g-com-game">
+            <div className="div">2</div>
 
-            <div className="frame-3">
+            <div className="g-com-info">
               {/* <img className="image" alt="Image" src={image2} /> */}
 
-              <div className="text-wrapper-2">Palworld</div>
+              <div className="div">Palworld</div>
             </div>
 
-            <div className="frame-4">
-              <div className="frame-5">
-                {/* <Rectangle text="점수 : 4.4" />
-                <Rectangle divClassName="rectangle-1" text="리뷰수 : 134" /> */}
+            <div className="g-com">
+              <div className="g-com-gs">
+                {/* <GComScore text="점수 : 4.4" />
+                <GComScore divClassName="g-com-g-score" text="리뷰수 : 134" /> */}
               </div>
 
-              {/* <Rectangle
-                className="rectangle-instance"
-                divClassName="rectangle-1-instance"
+              {/* <GComScore
+                className="rectangle"
+                divClassName="g-com-g1-score"
                 text="재미 입문용"
               /> */}
             </div>
 
-            <div className="frame-4">
-              <div className="frame-5">
-                {/* <Rectangle
-                  divClassName="design-component-instance-node"
+            <div className="g-com">
+              <div className="g-com-gs">
+                {/* <GComScore
+                  divClassName="g-com-score-instance"
                   text="평균 : 87시간"
                 />
-                <Rectangle
-                  divClassName="rectangle-2"
+                <GComScore
+                  divClassName="g-com-g-score-instance"
                   text="표준편차 : 171.15"
                 /> */}
               </div>
 
-              {/* <Rectangle
-                className="rectangle-3"
-                divClassName="rectangle-4"
+              {/* <GComScore
+                className="g-com-g1-score-instance"
+                divClassName="design-component-instance-node"
                 text="최적화 크래쉬"
               /> */}
             </div>
 
-            <button className="button">
-              <button className="button-2">삭제</button>
+            <button className="button-wrapper">
+              <button className="button">삭제</button>
             </button>
           </div>
 
-          <div className="frame-2">
-            <div className="text-wrapper-2">3</div>
+          <div className="g-com-game">
+            <div className="div">3</div>
 
-            <div className="frame-3">
+            <div className="g-com-info">
               {/* <img className="image" alt="Image" src={image3} /> */}
 
-              <div className="text-wrapper-2">Ready or not</div>
+              <div className="div">Ready or not</div>
             </div>
 
-            <div className="frame-4">
-              <div className="frame-5">
-                {/* <Rectangle text="점수 : 4.4" />
-                <Rectangle divClassName="rectangle-1" text="리뷰수 : 134" /> */}
+            <div className="g-com">
+              <div className="g-com-gs">
+                {/* <GComScore divClassName="g-com-score-2" text="점수 : 4.4" />
+                <GComScore divClassName="g-com-score-3" text="리뷰수 : 134" /> */}
               </div>
 
-              {/* <Rectangle
-                className="rectangle-instance"
-                divClassName="rectangle-1-instance"
+              {/* <GComScore
+                className="rectangle"
+                divClassName="g-com-g1-score"
                 text="재미 입문용"
               /> */}
             </div>
 
-            <div className="frame-4">
-              <div className="frame-5">
-                {/* <Rectangle
-                  divClassName="design-component-instance-node"
+            <div className="g-com">
+              <div className="g-com-gs">
+                {/* <GComScore
+                  divClassName="g-com-score-instance"
                   text="평균 : 87시간"
                 />
-                <Rectangle
-                  divClassName="rectangle-2"
+                <GComScore
+                  divClassName="g-com-g-score-instance"
                   text="표준편차 : 171.15"
                 /> */}
               </div>
 
-              {/* <Rectangle
-                className="rectangle-3"
-                divClassName="rectangle-4"
+              {/* <GComScore
+                className="g-com-g1-score-instance"
+                divClassName="design-component-instance-node"
                 text="최적화 크래쉬"
               /> */}
             </div>
 
-            <button className="button">
-              <button className="button-2">삭제</button>
+            <button className="button-wrapper">
+              <button className="button">삭제</button>
             </button>
           </div>
         </div>

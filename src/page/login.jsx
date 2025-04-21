@@ -5,32 +5,32 @@ import "../css/login.css";
 const LoginF = () => {
   return (
     <div className="login-f">
-      <div className="frame-wrapper">
-        <div className="frame">
+      <div className="login-main-f-wrapper">
+        <div className="login-main-f">
           <div className="div">리Viewer</div>
 
           <div className="login-form">
             <div className="div-2">
-              <div className="label">아이디</div>
+              <div className="text-wrapper-2">아이디</div>
 
-              <div className="input" />
+              <div className="div-3" />
             </div>
 
             <div className="div-2">
-              <div className="label">비밀번호</div>
+              <div className="text-wrapper-2">비밀번호</div>
 
-              <div className="input" />
+              <div className="div-3" />
             </div>
 
-            <div className="button-group">
-              <button className="button">
-                <button className="button-2">로그인</button>
-              </button>
+            <div className="login-button">
+              <div className="login-b">
+                <div className="login-txt">로그인</div>
+              </div>
             </div>
 
             {/* <TextLink
-              className="text-link-instance"
-              divClassName="design-component-instance-node"
+              className="register-button"
+              divClassName="text-link-instance"
               text="아직 회원이 아니신가요?"
             /> */}
           </div>
