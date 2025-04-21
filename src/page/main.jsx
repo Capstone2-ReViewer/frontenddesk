@@ -4,7 +4,7 @@ import React from "react";
 // import { Text } from "./Text";
 import "../css/main.css";
 
-const Main = () => {
+const MainF = () => {
   return (
     <div className="main">
       <div className="div">
@@ -78,4 +78,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default MainF;

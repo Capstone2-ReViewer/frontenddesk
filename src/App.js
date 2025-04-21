@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Main from './page/main';
+import MainF from './page/main';
 import GameRankingF from './page/gamerankingview';
 import GameInfoF from './page/gameinfo';
 import GameCompareF from './page/gamecompare';
@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   return (
     <Routes>
-        <Route path="/" elements={<Main />}/>
+        <Route path="/" elements={<MainF />}/>
         <Route path="/gameranking" elements={<GameRankingF />}/>
         <Route path="/gameinfo" elements={<GameInfoF />}/>
         <Route path="/gamecompare" elements={<GameCompareF />}/>
