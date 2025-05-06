@@ -82,7 +82,7 @@
 
 
 import React from "react";
-import "../css/main.css";
+import "./main.css";
 
 const Main = () => {
   return (

@@ -4,7 +4,7 @@ import React from "react";
 // import image2 from "./image-2.png";
 // import image from "./image.png";
 // import line1 from "./line-1.svg";
-import "../css/gameinfo.css";
+import "./gameinfo.css";
 
 const GameInfoF = () => {
   return (

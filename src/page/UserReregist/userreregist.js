@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/userreregist.css";
+import "./userreregist.css";
 
 const UserReinF = () => {
   return (

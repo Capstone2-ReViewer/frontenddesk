@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
-import Main from './page/main';
-import GameRankingF from './page/gamerankingview';
-import GameInfoF from './page/gameinfo';
-import GameCompareF from './page/gamecompare';
-import LoginF from './page/login';
-import MypageF from './page/mypage';
-import UserRegistF from './page/userregist';
-import UserViewF from './page/userview';
-import UserReRegistF from './page/userreregist';
+import Main from './page/Main/main';
+import GameRankingF from './page/GameRankingView/gamerankingview';
+import GameInfoF from './page/GameInfo/gameinfo';
+import GameCompareF from './page/GameCompare/gamecompare';
+import LoginF from './page/Login/login';
+import MypageF from './page/Mypage/mypage';  
+import UserRegistF from './page/UserRegist/userregist';
+import UserViewF from './page/UserView/userview';
+import UserReRegistF from './page/UserReregist/userreregist';
 import './App.css';
 
 function App() {

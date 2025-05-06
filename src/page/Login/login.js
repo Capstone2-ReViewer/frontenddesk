@@ -1,6 +1,6 @@
 import React from "react";
 // import { TextLink } from "./TextLink";
-import "../css/login.css";
+import "./login.css";
 
 const LoginF = () => {
   return (

@@ -3,7 +3,7 @@ import React from "react";
 // import image2 from "./image-2.png";
 // import image3 from "./image-3.png";
 // import image from "./image.png";
-import "../css/gamecompare.css";
+import "./gamecompare.css";
 
 const GameCompareF = () => {
   return (

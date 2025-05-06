@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/userview.css";
+import "./userview.css";
 
 const UserViewF = () => {
   return (
