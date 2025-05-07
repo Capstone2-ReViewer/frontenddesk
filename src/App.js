@@ -13,15 +13,15 @@ import './App.css';
 function App() {
   return (
     <Routes>
-        <Route path="/" elements={<Main />}/>
-        <Route path="/gameranking" elements={<GameRankingF />}/>
-        <Route path="/gameinfo" elements={<GameInfoF />}/>
-        <Route path="/gamecompare" elements={<GameCompareF />}/>
-        <Route path="/login" elements={<LoginF />}/>
-        <Route path="/mypage" elements={<MypageF />}/>
-        <Route path="/userregist" elements={<UserRegistF />}/>
-        <Route path="/userview" elements={<UserViewF />}/>
-        <Route path="/userreregist" elements={<UserReRegistF />}/>
+        <Route path="/" element={<Main />}/>
+        <Route path="/gameranking" element={<GameRankingF />}/>
+        <Route path="/gameinfo" element={<GameInfoF />}/>
+        <Route path="/gamecompare" element={<GameCompareF />}/>
+        <Route path="/login" element={<LoginF />}/>
+        <Route path="/mypage" element={<MypageF />}/>
+        <Route path="/userregist" element={<UserRegistF />}/>
+        <Route path="/userview" element={<UserViewF />}/>
+        <Route path="/userreregist" element={<UserReRegistF />}/>
     </Routes>
     
   );
