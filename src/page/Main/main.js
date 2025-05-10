@@ -5,6 +5,12 @@ import React from "react";
 import "./main.css";
 
 const Main = () => {
+
+  const handleGameInfoView = (appid) => {
+    navigate(`/gameinfo/${appid}`);
+};
+
+
   return (
     <div className="main">
       <div className="div">

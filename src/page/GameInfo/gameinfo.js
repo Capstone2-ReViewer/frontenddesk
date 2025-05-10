@@ -7,6 +7,29 @@ import React from "react";
 import "./gameinfo.css";
 
 const GameInfoF = () => {
+  const { appid } = useParams();
+  const [gameInfoData, setGameInfoData] = useState(null);
+
+
+  useEffect(() => {
+    const fetchGameInfoData = async () => {
+        try {
+            const response = await fetch(`/${appid}`);
+            const data = await response.json();
+            setGameInfoData(data);
+        } catch (error) {
+            console.error('Error fetching GameInfo Data:', error);
+        }
+    };
+
+    fetchGameInfoData();
+  }, [appid]);
+
+  const handleCompare = () =>{
+
+  }
+
+
   return (
     <div className="game-info-f">
       <div className="div">리Viewer</div>
@@ -16,25 +39,30 @@ const GameInfoF = () => {
           {/* <img className="image" alt="Image" src={image2} /> */}
 
           <div className="g-info-cont">
-            <div className="text-wrapper-2">Monster Hunter Wilds</div>
+            <div className="text-wrapper-2">
+              {/* Monster Hunter Wilds */}
+              {gameInfoData.getGame_name || '게임 이름 없음'}
+            </div>
 
             <p className="p">
-              거칠고 치열한 자연의 습격. 시시각각 역동적으로 그 모습을 바꾸는
+              {/* 거칠고 치열한 자연의 습격. 시시각각 역동적으로 그 모습을 바꾸는
               필드. 양면성을 지닌 세계를 살아가는 몬스터와 사람들의 이야기.
               더욱더 발전한 헌팅 액션과 끊임없는 몰입감을 추구하는 궁극의 사냥
-              체험이 당신을 기다리고 있다.
+              체험이 당신을 기다리고 있다. */}
+              {gameInfoData.getDescription || '소개 없음'}
             </p>
 
             <div className="g-info-footer">
               <div className="game-info-tag-list">
-                <div className="text-wrapper-2">사냥</div>
+                {/* <div className="text-wrapper-2">사냥</div>
 
                 <div className="text-wrapper-2">액션</div>
 
-                <div className="text-wrapper-2">멀티플레이어</div>
+                <div className="text-wrapper-2">멀티플레이어</div> */}
+                {gameInfoData.getGenres || '장르 없음'}
               </div>
 
-              <div className="g-com-button">
+              <div className="g-com-button" onClick={handleCompare}>
                 <div className="g-com-button-txt">찜하기</div>
               </div>
             </div>
