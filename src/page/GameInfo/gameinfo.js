@@ -1,9 +1,10 @@
-import React from "react";
 // import { Text } from "./Text";
 // import image1 from "./image-1.png";
 // import image2 from "./image-2.png";
 // import image from "./image.png";
 // import line1 from "./line-1.svg";
+import React, { useEffect, useState, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom'; 
 import "./gameinfo.css";
 
 const GameInfoF = () => {

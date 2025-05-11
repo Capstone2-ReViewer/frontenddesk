@@ -5,6 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+// express 설치
+const express = require('express')
+const app = express()
+const port = 5000
+
+// 몽고DB 연결
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/')
+  .then(() => console.log('MogoDB 연결완료'))
+  .catch(() => console.log('failed'))
+
+app.listen(port, () => {console.log(`App listening on port ${port}`)})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

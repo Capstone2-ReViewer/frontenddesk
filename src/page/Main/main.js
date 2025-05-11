@@ -2,9 +2,11 @@ import React from "react";
 // import { IconButton } from "./IconButton";
 // import { Search } from "./Search";
 // import { Text } from "./Text";
+import { useNavigate } from 'react-router-dom'; 
 import "./main.css";
 
 const Main = () => {
+  const navigate = useNavigate();
 
   const handleGameInfoView = (appid) => {
     navigate(`/gameinfo/${appid}`);
