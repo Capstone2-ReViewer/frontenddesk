@@ -1,131 +1,131 @@
 .main {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
 .main .div {
-  background-color: #ffffff;
-  height: 1080px;
-  position: relative;
-  width: 1920px;
+    background-color: #ffffff;
+    height: 1080px;
+    position: relative;
+    width: 1920px;
 }
 
 .main .main-under-f {
-  align-items: center;
-  display: inline-flex;
-  gap: 57px;
-  left: 378px;
-  position: absolute;
-  top: 455px;
+    align-items: center;
+    display: inline-flex;
+    gap: 57px;
+    left: 378px;
+    position: absolute;
+    top: 455px;
 }
 
 .main .game {
-  align-items: center;
-  background-color: #d9d9d9;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  height: 323px;
-  padding: 46px 34px;
-  position: relative;
-  width: 318px;
+    align-items: center;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 323px;
+    padding: 46px 34px;
+    position: relative;
+    width: 318px;
 }
 
 .main .image {
-  background-color: #ffffff;
-  height: 160px;
-  position: relative;
-  width: 250px;
+    background-color: #ffffff;
+    height: 160px;
+    position: relative;
+    width: 250px;
 }
 
 .main .text-wrapper {
-  color: #000000;
-  font-family: "NanumGothic-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 28.0px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 28px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
 }
 
 .main .g-ranking-b {
-  align-items: center;
-  background-color: #d9d9d9;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: 240px;
-  justify-content: center;
-  padding: 17px 10px;
-  position: relative;
-  width: 40px;
+    align-items: center;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 240px;
+    justify-content: center;
+    padding: 17px 10px;
+    position: relative;
+    width: 40px;
 }
 
 .main .text-wrapper-2 {
-  color: var(--m3syslight-medium-contraston-surface);
-  font-family: "NanumGothic-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 20px;
-  position: relative;
-  width: fit-content;
+    color: var(--m3syslight-medium-contraston-surface);
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: relative;
+    width: fit-content;
 }
 
 .main .main-serch-bar {
-  align-items: center;
-  background-color: #d9d9d9;
-  display: flex;
-  gap: 10px;
-  height: 56px;
-  justify-content: center;
-  left: 659px;
-  padding: 16px 271px;
-  position: absolute;
-  top: 322px;
-  width: 601px;
+    align-items: center;
+    background-color: #d9d9d9;
+    display: flex;
+    gap: 10px;
+    height: 56px;
+    justify-content: center;
+    left: 659px;
+    padding: 16px 271px;
+    position: absolute;
+    top: 322px;
+    width: 601px;
 }
 
 .main .text-wrapper-3 {
-  color: #000000;
-  font-family: "NanumGothic-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.50px;
-  line-height: 24px;
-  margin-top: -1.00px;
-  position: relative;
-  white-space: nowrap;
-  width: fit-content;
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
 }
 
 .main .text-wrapper-4 {
-  color: #000000;
-  font-family: "NanumGothic-Regular", Helvetica;
-  font-size: 64px;
-  font-weight: 400;
-  left: 827px;
-  letter-spacing: 0;
-  line-height: 64px;
-  position: absolute;
-  top: 177px;
-  white-space: nowrap;
+    color: #000000;
+    font-family: "NanumGothic-Regular", Helvetica;
+    font-size: 64px;
+    font-weight: 400;
+    left: 827px;
+    letter-spacing: 0;
+    line-height: 64px;
+    position: absolute;
+    top: 177px;
+    white-space: nowrap;
 }
 
 .main .text-wrapper-5 {
-  color: #000000;
-  font-family: "NanumGothic-Bold", Helvetica;
-  font-size: 20px;
-  font-weight: 700;
-  left: 1759px;
-  letter-spacing: 0;
-  line-height: 20px;
-  position: absolute;
-  top: 61px;
-  white-space: nowrap;
+    color: #000000;
+    font-family: "NanumGothic-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 1759px;
+    letter-spacing: 0;
+    line-height: 20px;
+    position: absolute;
+    top: 61px;
+    white-space: nowrap;
 }
