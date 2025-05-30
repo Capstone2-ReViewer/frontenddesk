@@ -1,7 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./mypage.css";
 
 const MypageF = () => {
+    const navigate = useNavigate();
+    const handleUserView = () => {
+        navigate(`/userview`);
+    };
+    const handleGCompare = () => {
+        navigate(`/gamecompare`);
+    };
+    const handleUserExit = () => {};
+
     return (
         <div className="mypage-f">
             <div className="mypage-main-f-wrapper">
@@ -9,15 +19,15 @@ const MypageF = () => {
                     <div className="text-wrapper">리Viewer</div>
 
                     <div className="mypage-button-f">
-                        <div className="div-wrapper">
+                        <div className="div-wrapper" onClick={handleUserView}>
                             <div className="div">회원 정보 조회</div>
                         </div>
 
-                        <div className="div-wrapper">
+                        <div className="div-wrapper" onClick={handleGCompare}>
                             <div className="div">찜 목록 조회</div>
                         </div>
 
-                        <div className="div-wrapper">
+                        <div className="div-wrapper" onClick={handleUserExit}>
                             <div className="div">회원 탈퇴</div>
                         </div>
                     </div>

@@ -3,6 +3,10 @@ import React from "react";
 import "./login.css";
 
 const LoginF = () => {
+    const handleLoginAction = () => {};
+
+    const handleRegistAction = () => {};
+
     return (
         <div className="login-f">
             <div className="login-main-f-wrapper">

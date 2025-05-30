@@ -1,131 +1,211 @@
-.main {
-    background-color: #ffffff;
+.button {
+    position: relative;
+    line-height: 100%;
+}
+.loginbutton {
+    position: absolute;
+    top: 50px;
+    left: 1700px;
+    border-radius: 8px;
+    background-color: #9fbde9;
+    border: 1px solid #979797;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    width: 100%;
+    padding: 12px;
+    color: #1d1b20;
 }
-
-.main .div {
-    background-color: #ffffff;
-    height: 1080px;
+.supportingText {
     position: relative;
-    width: 1920px;
-}
-
-.main .main-under-f {
-    align-items: center;
-    display: inline-flex;
-    gap: 57px;
-    left: 378px;
-    position: absolute;
-    top: 455px;
-}
-
-.main .game {
-    align-items: center;
-    background-color: #d9d9d9;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    height: 323px;
-    padding: 46px 34px;
-    position: relative;
-    width: 318px;
-}
-
-.main .image {
-    background-color: #ffffff;
-    height: 160px;
-    position: relative;
-    width: 250px;
-}
-
-.main .text-wrapper {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 28px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.main .g-ranking-b {
-    align-items: center;
-    background-color: #d9d9d9;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 240px;
-    justify-content: center;
-    padding: 17px 10px;
-    position: relative;
-    width: 40px;
-}
-
-.main .text-wrapper-2 {
-    color: var(--m3syslight-medium-contraston-surface);
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 20px;
-    position: relative;
-    width: fit-content;
-}
-
-.main .main-serch-bar {
-    align-items: center;
-    background-color: #d9d9d9;
-    display: flex;
-    gap: 10px;
-    height: 56px;
-    justify-content: center;
-    left: 659px;
-    padding: 16px 271px;
-    position: absolute;
-    top: 322px;
-    width: 601px;
-}
-
-.main .text-wrapper-3 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
     letter-spacing: 0.5px;
     line-height: 24px;
-    margin-top: -1px;
+}
+.content {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px 0px 20px;
+}
+.containerIcon {
+    width: 40px;
+    border-radius: 100px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.stTrailingIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.trailingElements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.stateLayer {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+    gap: 4px;
+}
+.mainsearchbar {
+    position: absolute;
+    top: 322px;
+    left: calc(50% - 300px);
+    border-radius: 28px;
+    background-color: #ece6f0;
+    width: 600px;
+    height: 56px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 360px;
+    max-width: 720px;
+    color: #49454f;
+}
+.imageIcon {
+    align-self: stretch;
+    max-width: 100%;
+    overflow: hidden;
+    height: 247px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.text1 {
+    flex: 1;
     position: relative;
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
-    width: fit-content;
 }
-
-.main .text-wrapper-4 {
-    color: #000000;
-    font-family: "NanumGothic-Regular", Helvetica;
+.text {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.body {
+    width: 208px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.productInfoCard {
+    width: 318px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    gap: 16px;
+    min-width: 240px;
+}
+.mainunderinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 46px;
+}
+.granking {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+}
+.grankingbutton {
+    width: 47px;
+    border-radius: 8px;
+    background-color: #9fbde9;
+    border: 1px solid #979797;
+    box-sizing: border-box;
+    height: 323px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    color: #1d1b20;
+}
+.mainunderf {
+    position: absolute;
+    top: 455px;
+    left: calc(50% - 575px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 57px;
+    color: #1e1e1e;
+}
+.viewer {
+    position: absolute;
+    top: 178px;
+    left: calc(50% - 133px);
     font-size: 64px;
-    font-weight: 400;
-    left: 827px;
-    letter-spacing: 0;
-    line-height: 64px;
-    position: absolute;
-    top: 177px;
-    white-space: nowrap;
+    line-height: 100%;
 }
-
-.main .text-wrapper-5 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 20px;
-    font-weight: 700;
-    left: 1759px;
-    letter-spacing: 0;
-    line-height: 20px;
+.sbarlisttxt {
     position: absolute;
-    top: 61px;
-    white-space: nowrap;
+    top: calc(50% - 9.5px);
+    left: 49px;
+}
+.sbarlistsubf {
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 300px);
+    background-color: #fff;
+    width: 600px;
+    height: 39px;
+    overflow: hidden;
+}
+.sbarlistsubf:hover {
+    background-color: #d9d9d9;
+}
+.sbarlistmainf {
+    position: relative;
+    top: 394px;
+    left: calc(50% - 300px);
+    background-color: #fff;
+    width: 600px;
+    height: 39px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 1080px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 20px;
+    color: #000;
+    font-family: NanumGothic;
 }
