@@ -1,10 +1,39 @@
-import React from "react";
+// import React, { useEffect, useState } from "react";
 import "./userview.css";
+import { useNavigate } from "react-router-dom";
 
 const UserViewF = () => {
+    const navigate = useNavigate();
+    // const [userData, setUserData] = useState(null);
+
+    // useEffect(() => {
+    //     const fetchGameInfoData = async () => {
+    //         try {
+    //             const response = await fetch(
+    //                 `http://localhost:8080/api/user/check-id?userId=${sessionStorage.getItem(
+    //                     "userId"
+    //                 )}`
+    //             );
+    //             const data = await response.json();
+    //             setUserData(data);
+    //             console.log(data);
+    //         } catch (error) {
+    //             console.error("Error fetching GameInfo Data:", error);
+    //         }
+    //     };
+
+    //     fetchGameInfoData();
+    // }, []);
+
+    const handleMain = () => {
+        navigate(`/`);
+    };
+
     return (
         <div className="user-view-f">
-            <div className="text-wrapper">회원 정보 조회</div>
+            <div className="text-wrapper" onClick={handleMain}>
+                회원 정보 조회
+            </div>
 
             <div className="div">
                 <div className="text-wrapper-2">아이디</div>

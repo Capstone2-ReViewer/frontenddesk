@@ -17,6 +17,23 @@
     padding: 12px;
     color: #1d1b20;
 }
+
+.myPagebutton {
+    position: absolute;
+    top: 50px;
+    left: 1500px;
+    border-radius: 8px;
+    background-color: #9fbde9;
+    border: 1px solid #979797;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    color: #1d1b20;
+}
+
 .supportingText {
     position: relative;
     letter-spacing: 0.5px;
@@ -85,7 +102,7 @@
     overflow: hidden;
     height: 247px;
     flex-shrink: 0;
-    object-fit: cover;
+    object-fit: fill;
 }
 .text1 {
     flex: 1;
@@ -108,6 +125,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    color: #000;
 }
 .productInfoCard {
     width: 318px;
@@ -172,37 +190,38 @@
 }
 .sbarlisttxt {
     position: absolute;
-    top: calc(50% - 9.5px);
+    top: calc(50% - 15px);
     left: 49px;
+    color: #000;
 }
 .sbarlistsubf {
-    position: absolute;
+    position: relative;
     top: 0px;
-    left: calc(50% - 300px);
-    background-color: #fff;
     width: 600px;
-    height: 39px;
-    overflow: hidden;
+    height: 40px;
 }
 .sbarlistsubf:hover {
     background-color: #d9d9d9;
+    cursor: pointer;
 }
 .sbarlistmainf {
-    position: relative;
+    position: absolute;
     top: 394px;
     left: calc(50% - 300px);
     background-color: #fff;
     width: 600px;
-    height: 39px;
-    overflow: hidden;
+    height: 700px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
 }
 .main {
     width: 100%;
     position: relative;
     background-color: #fff;
-    height: 1080px;
+    height: 100vh;
     overflow: hidden;
     text-align: left;
     font-size: 20px;

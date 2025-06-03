@@ -1,458 +1,311 @@
-.game-info-f {
-    align-items: center;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    padding: 100px 827px;
+.infoviewer {
     position: relative;
+    line-height: 100%;
 }
-
-.game-info-f .div {
-    color: #000000;
-    font-family: "NanumGothic-Regular", Helvetica;
-    font-size: 64px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: 64px;
-    margin-top: -1px;
+.infoheadviewer {
     position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    line-height: 100%;
 }
-
-.game-info-f .game-info-main {
-    align-items: flex-start;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: 30px;
-    margin-left: -453px;
-    margin-right: -453px;
-    position: relative;
-    width: 1172px;
-}
-
-.game-info-f .game-info {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    gap: 30px;
-    height: 248px;
-    padding: 0px 15px;
-    position: relative;
-    width: 100%;
-}
-
-.game-info-f .ginfoimage {
-    height: 100px;
-    position: relative;
+.infoimageIcon {
     width: 300px;
-}
-
-.game-info-f .g-info-cont {
-    align-items: flex-start;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 30px;
     position: relative;
+    height: 100px;
+    object-fit: cover;
 }
-
-.game-info-f .text-wrapper-2 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 24px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .p {
+.infob {
     align-self: stretch;
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 28.8px;
     position: relative;
+    line-height: 120%;
 }
-
-.game-info-f .g-info-footer {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    gap: 30px;
-    position: relative;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.game-info-f .game-info-tag-list {
-    align-items: center;
-    display: flex;
+.gameinfotaglist {
     flex: 1;
-    flex-grow: 1;
-    gap: 30px;
-    position: relative;
-}
-
-.game-info-f .g-com-button {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 24px;
+    color: #000;
+}
+.gcombutton {
+    border-radius: 8px;
     background-color: #9fbde9;
-    border: 1px solid;
-    border-color: #979797;
-    border-radius: var(--size-radius-200);
-    display: inline-flex;
-    flex: 0.1 0.1 auto;
-    gap: var(--size-space-200);
-    justify-content: center;
+    border: 1px solid #979797;
     overflow: hidden;
-    padding: var(--size-space-300);
-    position: relative;
-}
-
-.game-info-f .g-com-button-txt {
-    color: var(--m3syslight-medium-contraston-surface);
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 20px;
-    margin-top: -1px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .g-key-word-main {
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+.ginfofooter {
     align-self: stretch;
     display: flex;
-    flex: 0 0 auto;
-    gap: 60px;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.game-info-f .div-2 {
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 20px;
+    color: #1d1b20;
+}
+.ginfocont {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 30px;
+}
+.gameinfo {
+    align-self: stretch;
+    height: 248px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.gkeywordgheader {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0px;
+}
+.infob7 {
+    position: relative;
+    font-size: 43.2px;
+    line-height: 100%;
+}
+.infob8 {
+    position: relative;
+    font-size: 26.4px;
+    line-height: 100%;
+}
+.gkeywordgmain {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 20px;
+    gap: 30px;
+    font-size: 14.4px;
+}
+.infoparent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.frameinfoParent {
+    border: 2px solid #6c6c6c;
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 30px;
+}
+.gkeywordgoodmain {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 0px 10px;
-    position: relative;
-    width: 420px;
-}
-
-.game-info-f .div-3 {
-    align-items: flex-start;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    justify-content: space-between;
-    position: relative;
-    width: 100%;
-}
-
-.game-info-f .g-keyword-g-main {
-    align-items: center;
-    border: 1px solid;
-    border-color: #000000;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-wrap: wrap;
-    gap: 30px 30px;
-    justify-content: center;
-    margin-bottom: -1px;
-    padding: 20px;
-    position: relative;
-}
-
-.game-info-f .text-wrapper-3 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 14.4px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 14.4px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .text-wrapper-4 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 43.2px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 43.2px;
-    margin-top: -0.5px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .text-wrapper-5 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 26.4px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 26.4px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .line {
-    align-self: stretch;
-    position: relative;
-    width: 2px;
-}
-
-.game-info-f .g-keyword-b-main {
-    align-items: center;
-    border: 1px solid;
-    border-color: #000000;
-    display: inline-flex;
-    flex: 0 0 auto;
-    flex-wrap: wrap;
-    gap: 30px 30px;
-    justify-content: center;
-    margin-bottom: -1px;
-    margin-left: -38.5px;
-    margin-right: -38.5px;
-    padding: 20px;
-    position: relative;
-}
-
-.game-info-f .text-wrapper-6 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 11.5px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .text-wrapper-7 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 40.8px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 40.8px;
-    margin-top: -0.5px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .text-wrapper-8 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 22.6px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 22.6px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .div-4 {
-    align-items: flex-start;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
+    box-sizing: border-box;
     gap: 30px;
-    padding: 0px 50px;
-    position: relative;
-    width: 100%;
 }
-
-.game-info-f .img {
+.gkeywordmainChild {
     align-self: stretch;
-    height: 721px;
-    object-fit: cover;
+    width: 2px;
     position: relative;
-    width: 100%;
+    border-right: 2px solid #6c6c6c;
+    box-sizing: border-box;
 }
-
-.game-info-f .g-stat-sub {
+.infob18 {
+    position: relative;
+    font-size: 43.2px;
+    line-height: 100%;
+}
+.infob19 {
+    position: relative;
+    font-size: 22.56px;
+    line-height: 100%;
+}
+.gkeywordbmain {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 20px;
+    gap: 30px;
+    font-size: 11.52px;
+}
+.gkeywordmain {
     align-self: stretch;
     display: flex;
-    flex: 0 0 auto;
-    gap: 100px;
-    position: relative;
-    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
 }
-
-.game-info-f .image-2 {
-    height: 410px;
+.infoimage1Icon {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
     object-fit: cover;
-    position: relative;
-    width: 610px;
 }
-
-.game-info-f .g-stat-txt-main {
-    align-items: flex-start;
+.gcalchart {
+    align-self: stretch;
     display: flex;
-    gap: 10px;
-    position: relative;
-    width: 246px;
-}
-
-.game-info-f .g-stat-txt-header {
-    align-items: flex-start;
-    display: inline-flex;
-    flex: 0 0 auto;
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 50px;
+    gap: 30px;
+}
+.infoimage1Icon1 {
+    width: 610px;
+    position: relative;
+    max-height: 100%;
+    object-fit: cover;
+}
+.gstattxtheader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     padding: 0px 25px 0px 0px;
-    position: relative;
-}
-
-.game-info-f .text-wrapper-9 {
-    color: #000000;
-    font-family: "NanumGothic-Bold", Helvetica;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 24px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.game-info-f .g-stat-txt-footer {
-    align-items: center;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    flex-grow: 1;
     gap: 10px;
-    justify-content: center;
-    position: relative;
 }
-
-.game-info-f .g-info-main-footer {
+.gstattxtfooter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.gstattxtmain {
+    width: 246px;
+    display: flex;
+    flex-direction: row;
     align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    width: auto;
+}
+.gstatsub {
     align-self: stretch;
     display: flex;
-    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 100px;
+}
+.infoimageIcon1 {
+    align-self: stretch;
+    max-width: 100%;
+    overflow: hidden;
+    height: 247px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.infotext1 {
+    flex: 1;
+    position: relative;
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.infotext {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.infobody {
+    width: 208px;
+    display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.productInfoCard {
+    width: 318px;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    gap: 16px;
+    min-width: 240px;
+}
+.ginfomainfooteralign {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 46px;
+    font-size: 20px;
+    color: #1e1e1e;
+}
+.ginfomainfooter {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     padding: 15px 50px;
-    position: relative;
-    width: 100%;
+    gap: 30px;
 }
-
-.game-info-f .g-info-main-footer-2 {
+.gameinfomain {
+    width: 1172px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 24px;
+    margin-top: 50px;
+}
+.gameinfof {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex: 0 0 auto;
-    gap: 46px;
     justify-content: center;
-    position: relative;
-    width: 100%;
-}
-
-.game-info-f .product-info-card {
-    align-items: flex-start;
-    background-color: var(--color-background-default-default);
-    border: 1px solid;
-    border-color: var(--color-border-default-default);
-    border-radius: var(--size-radius-200);
-    display: flex;
-    flex-direction: column;
-    gap: var(--size-space-400);
-    padding: var(--size-space-400);
-    position: relative;
-    width: 318px;
-}
-
-.game-info-f .image-3 {
-    align-self: stretch;
-    /* background-image: url(./image-3.png); */
-    background-position: 50% 50%;
-    background-size: cover;
-    height: 247px;
-    position: relative;
-    width: 100%;
-}
-
-.game-info-f .body {
-    align-items: flex-start;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    gap: var(--size-space-200);
-    position: relative;
-    width: 208px;
-}
-
-.game-info-f .text-instance {
-    align-self: stretch !important;
-    display: flex !important;
-    flex: 0 0 auto !important;
-    width: 100% !important;
-}
-
-.game-info-f .design-component-instance-node {
-    -webkit-box-orient: vertical !important;
-    /* -webkit-line-clamp: 1 !important; */
-    display: -webkit-box !important;
-    flex: 1 !important;
-    font-family: "NanumGothic-Bold", Helvetica !important;
-    font-size: 20px !important;
-    font-style: unset !important;
-    font-weight: 700 !important;
-    letter-spacing: 0 !important;
-    line-height: 28px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: unset !important;
-    width: unset !important;
-}
-
-.game-info-f .image-4 {
-    align-self: stretch;
-    /* background-image: url(./image-4.png); */
-    background-position: 50% 50%;
-    background-size: cover;
-    height: 247px;
-    position: relative;
-    width: 100%;
-}
-
-.game-info-f .image-5 {
-    align-self: stretch;
-    /* background-image: url(./image-5.png); */
-    background-position: 50% 50%;
-    background-size: cover;
-    height: 247px;
-    position: relative;
-    width: 100%;
+    padding: 100px 827px;
+    box-sizing: border-box;
+    gap: 30px;
+    text-align: left;
+    font-size: 64px;
+    color: #000;
+    font-family: NanumGothic;
 }

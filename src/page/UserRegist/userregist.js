@@ -1,6 +1,6 @@
 import "./userregist.css";
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserInF = () => {
     const [cpId, setcpId] = useState("");
@@ -12,7 +12,7 @@ const UserInF = () => {
     const [cpGender, setcpGender] = useState("");
     const [cpPreferredTags, setcpPreferredTags] = useState("");
     const [cpDislikedTags, setcpDislikedTags] = useState("");
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const tagMap = {
         1: "액션",
@@ -27,19 +27,45 @@ const UserInF = () => {
         10: "레이싱",
     };
 
-    const parseTags = (tagStr) => {
-        if (!tagStr.trim()) return []; // 빈 문자열이면 빈 배열 반환
-        const tags = tagStr
-            .split(",")
-            .map((str) => str.trim())
-            .filter((s) => s !== "")
-            .map((idStr) => {
-                const id = parseInt(idStr);
-                if (isNaN(id)) throw new Error(`잘못된 태그 ID: "${idStr}"`);
-                return { tagId: id, tagName: tagMap[id] || "알 수 없음" };
-            });
-        return tags;
+    // const parseTags = (tagStr) => {
+    //     if (!tagStr.trim()) return []; // 빈 문자열이면 빈 배열 반환
+    //     const tags = tagStr
+    //         .split(",")
+    //         .map((str) => str.trim())
+    //         .filter((s) => s !== "")
+    //         .map((idStr) => {
+    //             const id = parseInt(idStr);
+    //             if (isNaN(id)) throw new Error(`잘못된 태그 ID: "${idStr}"`);
+    //             return { tagId: id, tagName: tagMap[id] || "알 수 없음" };
+    //         });
+    //     return tags;
+    // };
+
+    const redirectTags = (nonfilterTagId) => {
+        console.log(nonfilterTagId);
+
+        // ID에 해당하는 태그 이름 찾기
+        const AfterfilterIds = nonfilterTagId.map((id) => ({
+            tagId: id,
+            tagName: tagMap[id] || "알 수 없음", // 예외 처리
+        }));
+
+        // 상태 업데이트
+        return AfterfilterIds;
     };
+    // const redirectTags = (filterTags) => {
+    //     // ID 값을 배열로 변환
+    //     const filterTagsId = filterTags.split(",").map(Number);
+
+    //     // ID에 해당하는 태그 이름 찾기
+    //     const filterTags = filterTagsId.map((id) => ({
+    //         tagId: id,
+    //         tagName: tagMap[id] || "알 수 없음", // 예외 처리
+    //     }));
+
+    //     // 상태 업데이트
+    //     return filterTags;
+    // };
 
     const fetchCPData = async () => {
         if (cpPw !== cpPwCheck) {
@@ -49,8 +75,8 @@ const UserInF = () => {
         try {
             let filterPreferredTags, filterDislikedTags;
             try {
-                filterPreferredTags = parseTags(cpPreferredTags.toString);
-                filterDislikedTags = parseTags(cpDislikedTags.toString);
+                filterPreferredTags = redirectTags(cpPreferredTags);
+                filterDislikedTags = redirectTags(cpDislikedTags);
             } catch (err) {
                 alert(err.message);
                 return;
@@ -67,7 +93,7 @@ const UserInF = () => {
                 preferredTags: filterPreferredTags,
                 dislikedTags: filterDislikedTags,
             };
-            console.log(data);
+            console.log(JSON.stringify(data));
             const response = await fetch(
                 "http://localhost:8080/api/user/signup",
                 {
@@ -79,9 +105,8 @@ const UserInF = () => {
             if (!response.ok) {
                 throw new Error(`Error: ${response.status}`);
             }
-            // const data = await response.json();
-            // alert("회원가입이 완료되었습니다.");
-            //navigate("/login"); // 회원가입 후 로그인 페이지로 이동
+            alert("회원가입이 완료되었습니다.");
+            navigate("/login"); // 회원가입 후 로그인 페이지로 이동
         } catch (error) {
             console.error("Error during registration:", error);
             alert("회원가입 중 오류가 발생했습니다.");
@@ -115,9 +140,15 @@ const UserInF = () => {
         }
     };
 
+    const handleMain = () => {
+        navigate(`/`);
+    };
+
     return (
         <div className="user-in-f">
-            <div className="text-wrapper">회원가입</div>
+            <div className="text-wrapper" onClick={handleMain}>
+                회원가입
+            </div>
 
             <div className="div">
                 <div className="text-wrapper-2">아이디</div>
@@ -721,7 +752,7 @@ const UserInF = () => {
             </div>
 
             <div className="user-regist-button" onClick={cpSubmit}>
-                <button className="button" onClick={cpSubmit}>
+                <button className="button">
                     <div className="button-2">회원가입</div>
                 </button>
             </div>

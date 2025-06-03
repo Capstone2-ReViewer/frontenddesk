@@ -1,11 +1,27 @@
-// import { Text } from "./Text";
-// import image1 from "./image-1.png";
-// import image2 from "./image-2.png";
-// import image from "./image.png";
-import line1 from "../../img/line.svg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./gameinfo.css";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from "chart.js";
+
+import { Line } from "react-chartjs-2";
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
 
 const GameInfoF = () => {
     const navigate = useNavigate();
@@ -13,6 +29,14 @@ const GameInfoF = () => {
     const [gameInfoData, setGameInfoData] = useState(null);
     const [gameSimListData, setGameSimListData] = useState(null);
     const [gameGenreList, setGameGenreList] = useState(null);
+    const [gameNegawordList, setGameNegawordList] = useState(null);
+    const [gamePosiwordList, setGamePosiwordList] = useState(null);
+    const [scorebydate, setscorebydate] = useState([]);
+    const [yearMonthList, setYearMonthList] = useState([]);
+    const [averageScoreList, setAverageScoreList] = useState([]);
+    const [chartData, setChartData] = useState(null);
+    const [chartKey, setChartKey] = useState(0); // 차트 키 추가
+    const chartRef = useRef(null);
 
     useEffect(() => {
         const fetchGameInfoData = async () => {
@@ -30,18 +54,93 @@ const GameInfoF = () => {
                 setGameSimListData(data.similarGames);
                 console.log(data.genres);
                 setGameGenreList(data.genres);
+                setGameNegawordList(data.negaWord);
+                setGamePosiwordList(data.posiWord);
+                setscorebydate(data.scoreByDate);
+                // if (data.scoreByDate) {
+                //     setYearMonthList(
+                //         data.scoreByDate.map((item) => item.yearMonth)
+                //     );
+                //     setAverageScoreList(
+                //         data.scoreByDate.map((item) => item.averageScore)
+                //     );
+                // }
+                // console.log(yearMonthList);
+                // console.log(averageScoreList);
             } catch (error) {
                 console.error("Error fetching GameInfo Data:", error);
             }
         };
-
         fetchGameInfoData();
     }, [appid]);
 
-    if (!gameInfoData) {
+    useEffect(() => {
+        console.log(scorebydate);
+        if (scorebydate) {
+            setYearMonthList(scorebydate.map((item) => item.yearMonth));
+            setAverageScoreList(scorebydate.map((item) => item.averageScore));
+        }
+        // console.log(yearMonthList);
+        // console.log(averageScoreList);
+    }, [scorebydate]); // scorebydate가 변경될 때만 실행됨
+
+    useEffect(() => {
+        if (yearMonthList.length > 0 && averageScoreList.length > 0) {
+            setChartData({
+                labels: yearMonthList,
+                datasets: [
+                    {
+                        label: "월별 점수 추이",
+                        data: averageScoreList,
+                        borderColor: "rgba(53, 162, 235, 1)",
+                        backgroundColor: "rgba(53, 162, 235, 0.5)",
+                        tension: 0.4,
+                    },
+                ],
+            });
+            setChartKey((prevKey) => prevKey + 1);
+        }
+    }, [yearMonthList, averageScoreList]);
+
+    useEffect(() => {
+        if (!chartRef.current) return;
+        ChartJS.getChart("chartCanvas")?.destroy(); // 컴포넌트 언마운트 시 차트 제거
+    }, []);
+
+    if (!gameInfoData && !chartRef.current) {
         return <div>Loading...</div>;
     }
-    const handleCompare = () => {};
+
+    const fetchComData = async () => {
+        try {
+            const response = await fetch(
+                `http://localhost:8080/wishlist?userId=${sessionStorage.getItem(
+                    "userId"
+                )}&gameId=${appid}`,
+                {
+                    method: "POST",
+                }
+            );
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+            // if (response.ok) {
+            //     throw new Error(`찜되었습니다`);
+            // }
+            console.log(response.text);
+            const resultText = await response.text();
+            alert(resultText);
+        } catch (error) {
+            console.error("Error during registration:", error);
+            alert("찜하기 중 오류가 발생했습니다.");
+        }
+    };
+
+    const handleCompare = () => {
+        sessionStorage.getItem("userId")
+            ? fetchComData()
+            : alert("로그인하고 이용해주세요");
+    };
     const handleSteamPage = () => {
         window.open(`https://store.steampowered.com/app/${appid}`);
     };
@@ -50,209 +149,263 @@ const GameInfoF = () => {
     };
 
     return (
-        <div className="game-info-f">
-            <div className="div" onClick={handleMain}>
+        <div className="gameinfof">
+            <div className="infoheadviewer" onClick={handleMain}>
                 리Viewer
             </div>
-
-            <div className="game-info-main">
-                <div className="game-info">
+            <div className="gameinfomain">
+                <div className="gameinfo">
                     <img
-                        className="ginfoimage"
-                        alt="ginfoimage"
+                        className="infoimageIcon"
+                        alt=""
                         src={gameInfoData.image}
                     />
-
-                    <div className="g-info-cont">
-                        <div className="text-wrapper-2">
+                    <div className="ginfocont">
+                        <b className="infoviewer">
+                            {" "}
                             {/* Monster Hunter Wilds */}
                             {gameInfoData.title || "게임 이름 없음"}
-                        </div>
-
-                        <p className="p">
+                        </b>
+                        <b className="infob">
                             {/* 거칠고 치열한 자연의 습격. 시시각각 역동적으로 그
                             모습을 바꾸는 필드. 양면성을 지닌 세계를 살아가는
                             몬스터와 사람들의 이야기. 더욱더 발전한 헌팅 액션과
                             끊임없는 몰입감을 추구하는 궁극의 사냥 체험이 당신을
                             기다리고 있다. */}
                             {gameInfoData.description || "소개 없음"}
-                        </p>
-                        <div className="g-info-footer">
-                            <div className="game-info-tag-list">
-                                {/* <div className="text-wrapper-2">사냥</div>
-                                <div className="text-wrapper-2">액션</div>
-                                <div className="text-wrapper-2">
-                                    멀티플레이어
-                                </div> */}
-                                {/* <div className="text-wrapper-2">
-                                    {gameInfoData.genres[0] || "장르 없음"}
-                                </div> */}
+                        </b>
+                        <div className="ginfofooter">
+                            <div className="gameinfotaglist">
+                                {/* <b className="infoviewer">사냥</b>
+                                <b className="infoviewer">액션</b>
+                                <b className="infoviewer">멀티플레이어</b> */}
                                 {gameGenreList.map((gameGenreList, index) => (
-                                    <div key={index} className="text-wrapper-2">
+                                    <b key={index} className="infoviewer">
                                         {gameGenreList}
-                                    </div>
+                                    </b>
                                 ))}
                             </div>
                         </div>
-                        <div className="g-info-footer">
-                            <button
-                                className="g-com-button"
-                                onClick={handleCompare}
-                            >
-                                <div className="g-com-button-txt">찜하기</div>
-                            </button>
-                            <button
-                                className="g-com-button"
+                        <div className="ginfofooter">
+                            <div className="gcombutton" onClick={handleCompare}>
+                                <b className="infoviewer">찜하기</b>
+                            </div>
+                            <div
+                                className="gcombutton"
                                 onClick={handleSteamPage}
                             >
-                                <div className="g-com-button-txt">
-                                    스팀페이지 이동
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="g-key-word-main">
-                    <div className="div-2">
-                        <div className="div-3">
-                            <div className="text-wrapper-2">긍정 키워드</div>
-
-                            <div className="text-wrapper-2">총 100개</div>
-                        </div>
-
-                        <div className="g-keyword-g-main">
-                            <div className="text-wrapper-3">스토리가 좋음</div>
-
-                            <div className="text-wrapper-4">재밌음</div>
-
-                            <div className="text-wrapper-5">참신함</div>
-                        </div>
-                    </div>
-
-                    <img className="line" alt="Line" src={line1} />
-
-                    <div className="div-2">
-                        <div className="div-3">
-                            <div className="text-wrapper-2">부정 키워드</div>
-
-                            <div className="text-wrapper-2">총 60개</div>
-                        </div>
-
-                        <div className="g-keyword-b-main">
-                            <div className="text-wrapper-6">
-                                스토리가 너무 심오함
-                            </div>
-
-                            <div className="text-wrapper-7">진부함</div>
-
-                            <div className="text-wrapper-8">
-                                장르가 마이너함
+                                <b className="infoviewer">스팀페이지 이동</b>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div className="gkeywordmain">
+                    <div className="gkeywordgoodmain">
+                        <div className="gkeywordgheader">
+                            <b className="infoviewer">긍정 키워드</b>
+                            {/* <b className="infoviewer">총 100개</b> */}
+                        </div>
+                        <div className="gkeywordgmain">
+                            {/* <b className="infoviewer">스토리가 좋음</b>
+                            <b className="infob7">재밌음</b>
+                            <b className="infob8">참신함</b> */}
+                            {gamePosiwordList.length !== 0 ? (
+                                gamePosiwordList.map(
+                                    (gamePosiwordList, index) => (
+                                        <b
+                                            key={index}
+                                            className="infob7"
+                                            style={{
+                                                fontSize: `${
+                                                    gamePosiwordList.count > 10
+                                                        ? gamePosiwordList.count >
+                                                          50
+                                                            ? 50
+                                                            : 3 *
+                                                                  gamePosiwordList.count >
+                                                              50
+                                                            ? gamePosiwordList.count
+                                                            : gamePosiwordList.count
+                                                        : 10
+                                                }px`,
+                                            }}
+                                        >
+                                            {gamePosiwordList.keyword}
+                                        </b>
+                                    )
+                                )
+                            ) : (
+                                <b className="infob7">키워드없음</b>
+                            )}
+                        </div>
 
-                <div className="div-4">
-                    <div className="text-wrapper-2">월별 점수 추이</div>
-                    {/* 여기에 차트 */}
-                    {/* <img className="img" alt="Image" src={image1} /> */}
-                </div>
-
-                <div className="div-4">
-                    <div className="text-wrapper-2">게임 통계</div>
-
-                    <div className="g-stat-sub">
-                        {/* 여기에 차트 */}
-                        {/* <img className="image-2" alt="Image" src={image} /> */}
-
-                        <div className="g-stat-txt-main">
-                            <div className="g-stat-txt-header">
-                                <div className="text-wrapper-2">평균 :</div>
-
-                                <div className="text-wrapper-9">상위 10% :</div>
-
-                                <div className="text-wrapper-9">중위 :</div>
-
-                                <div className="text-wrapper-9">표준편차 :</div>
+                        {/* <div className="frameinfoParent">
+                            <div className="infoparent">
+                                <b className="infoviewer">재밌음</b>
+                                <b className="infoviewer">참신함</b>
+                                <b className="infoviewer">스토리가 좋음</b>
                             </div>
-
-                            <div className="g-stat-txt-footer">
-                                <div className="text-wrapper-2">
+                            <div className="infoparent">
+                                <b className="infoviewer">30개 / 30%</b>
+                                <b className="infoviewer">17개 / 17%</b>
+                                <b className="infoviewer">10개 / 10%</b>
+                            </div>
+                        </div> */}
+                    </div>
+                    <div className="gkeywordmainChild" />
+                    <div className="gkeywordgoodmain">
+                        <div className="gkeywordgheader">
+                            <b className="infoviewer">부정 키워드</b>
+                            {/* <b className="infoviewer">총 60개</b> */}
+                        </div>
+                        <div className="gkeywordbmain">
+                            {/* <b className="infoviewer">스토리가 너무 심오함</b>
+                            <b className="infob18">진부함</b>
+                            <b className="infob19">장르가 마이너함</b> */}
+                            {gameNegawordList.length !== 0 ? (
+                                gameNegawordList.map(
+                                    (gameNegawordList, index) => (
+                                        <div
+                                            key={index}
+                                            className="infob18"
+                                            style={{
+                                                fontSize: `${
+                                                    gameNegawordList.count > 10
+                                                        ? gameNegawordList.count >
+                                                          50
+                                                            ? 50
+                                                            : 3 *
+                                                                  gameNegawordList.count >
+                                                              50
+                                                            ? gameNegawordList.count
+                                                            : gameNegawordList.count
+                                                        : 10
+                                                }px`,
+                                            }}
+                                        >
+                                            {gameNegawordList.keyword}
+                                        </div>
+                                    )
+                                )
+                            ) : (
+                                <div className="infob18">키워드없음</div>
+                            )}
+                        </div>
+                        {/* <div className="frameinfoParent">
+                            <div className="infoparent">
+                                <b className="infoviewer">진부함</b>
+                                <b className="infoviewer">장르가 마이너함</b>
+                                <b className="infoviewer">
+                                    스토리가 너무 심오함
+                                </b>
+                            </div>
+                            <div className="infoparent">
+                                <b className="infoviewer">12개 / 20%</b>
+                                <b className="infoviewer">10개 / 16.7%</b>
+                                <b className="infoviewer">6개 / 10%</b>
+                            </div>
+                        </div> */}
+                    </div>
+                </div>
+                <div className="gcalchart">
+                    <b className="infoviewer">월별 점수 추이</b>
+                    {/* <img className="infoimage1Icon" alt="" src="image 1.png" /> */}
+                    {chartData && (
+                        <div className="infoimage1Icon">
+                            <Line
+                                id="chartCanvas"
+                                key={chartKey}
+                                data={chartData}
+                                options={{ responsive: true }}
+                            />
+                        </div>
+                    )}
+                </div>
+                <div className="gcalchart">
+                    <b className="infoviewer">게임 통계</b>
+                    <div className="gstatsub">
+                        <div className="gstattxtmain">
+                            <div className="gstattxtheader">
+                                <b className="infoviewer">평균 :</b>
+                                <b className="infoviewer">상위 10% :</b>
+                                <b className="infoviewer">평균 플레이타임 :</b>
+                                {/* <b className="infoviewer">표준편차 :</b> */}
+                            </div>
+                            <div className="gstattxtfooter">
+                                <b className="infoviewer">
                                     {gameInfoData.scoreTrend.average}시간
-                                </div>
-
-                                <div className="text-wrapper-9">
+                                </b>
+                                <b className="infoviewer">
                                     {gameInfoData.scoreTrend.top10Percent}시간
-                                </div>
-
-                                <div className="text-wrapper-9">
-                                    {gameInfoData.scoreTrend.median}시간
-                                </div>
-
-                                <div className="text-wrapper-9">
+                                </b>
+                                <b className="infoviewer">
+                                    {gameInfoData.scoreTrend.avg}시간
+                                </b>
+                                {/* <b className="infoviewer">
                                     {gameInfoData.scoreTrend.stdDev}
-                                </div>
+                                </b> */}
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div className="g-info-main-footer">
-                    <div className="text-wrapper-2">비슷한 게임</div>
-
-                    <div className="g-info-main-footer-2">
+                <div className="ginfomainfooter">
+                    <b className="infoviewer">비슷한 게임</b>
+                    <div className="ginfomainfooteralign">
                         {gameSimListData.map((gameSimListData, index) => (
-                            <div key={index} className="product-info-card">
+                            <div key={index} className="productInfoCard">
                                 <Link to={`/gameinfo/${gameSimListData.appid}`}>
                                     <img
-                                        className="image-3"
+                                        className="infoimageIcon1"
                                         alt="infoImg"
                                         src={gameSimListData.image}
                                     />
-                                    <div className="text-instance">
-                                        {gameSimListData.title}
+                                    <div className="infobody">
+                                        <div className="infotext">
+                                            <b className="infotext1">
+                                                {gameSimListData.title}
+                                            </b>
+                                        </div>
                                     </div>
                                 </Link>
                             </div>
                         ))}
-                        {/* <div className="product-info-card">
-                            <image
-                                className="image-3"
-                                src={gameSimListData.map}
+
+                        {/* <div className="productInfoCard">
+                            <img
+                                className="infoimageIcon1"
+                                alt=""
+                                src="image.png"
                             />
-
                             <div className="body">
-                                {gameInfoData.similarGames[0].title}
-                                <Text
-                                    className="text-instance"
-                                    divClassName="design-component-instance-node"
-                                    text="Palworld / 팰월드"
-                                />
+                                <div className="text">
+                                    <b className="text1">Palworld / 팰월드</b>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="product-info-card">
-                            <div className="image-4" />
-
+                        <div className="productInfoCard">
+                            <img
+                                className="infoimageIcon1"
+                                alt=""
+                                src="image.png"
+                            />
                             <div className="body">
-                                <Text
-                                    className="text-instance"
-                                    divClassName="design-component-instance-node"
-                                    text="Monster Hunter Wilds"
-                                />
+                                <div className="text">
+                                    <b className="text1">
+                                        Monster Hunter Wilds
+                                    </b>
+                                </div>
                             </div>
                         </div>
-
-                        <div className="product-info-card">
-                            <div className="image-5" />
-
+                        <div className="productInfoCard">
+                            <img
+                                className="infoimageIcon1"
+                                alt=""
+                                src="image.png"
+                            />
                             <div className="body">
-                                <Text
-                                    className="text-instance"
-                                    divClassName="design-component-instance-node"
-                                    text="Ready or Not"
-                                />
+                                <div className="text">
+                                    <b className="text1">Ready or Not</b>
+                                </div>
                             </div>
                         </div> */}
                     </div>
@@ -263,163 +416,3 @@ const GameInfoF = () => {
 };
 
 export default GameInfoF;
-
-// import "./gameinfo.css";
-
-// const GameInfoF = () => {
-//     return (
-//         <div className="gameinfof">
-//             <div className="viewer">리Viewer</div>
-//             <div className="gameinfomain">
-//                 <div className="gameinfo">
-//                     <img className="image-icon" alt="" src="image.png" />
-//                     <div className="ginfocont">
-//                         <b className="viewer">Monster Hunter Wilds</b>
-//                         <b className="b">
-//                             거칠고 치열한 자연의 습격. 시시각각 역동적으로 그
-//                             모습을 바꾸는 필드. 양면성을 지닌 세계를 살아가는
-//                             몬스터와 사람들의 이야기. 더욱더 발전한 헌팅 액션과
-//                             끊임없는 몰입감을 추구하는 궁극의 사냥 체험이 당신을
-//                             기다리고 있다.
-//                         </b>
-//                         <div className="ginfofooter">
-//                             <div className="gameinfotaglist">
-//                                 <b className="viewer">사냥</b>
-//                                 <b className="viewer">액션</b>
-//                                 <b className="viewer">멀티플레이어</b>
-//                             </div>
-//                             <div className="gcombutton">
-//                                 <b className="viewer">찜하기</b>
-//                             </div>
-//                             <div className="gcombutton">
-//                                 <b className="viewer">스팀페이지 이동</b>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className="gkeywordmain">
-//                     <div className="gkeywordgoodmain">
-//                         <div className="gkeywordgheader">
-//                             <b className="viewer">긍정 키워드</b>
-//                             <b className="viewer">총 100개</b>
-//                         </div>
-//                         <div className="gkeywordgmain">
-//                             <b className="viewer">스토리가 좋음</b>
-//                             <b className="b7">재밌음</b>
-//                             <b className="b8">참신함</b>
-//                         </div>
-//                         <div className="frame-parent">
-//                             <div className="parent">
-//                                 <b className="viewer">재밌음</b>
-//                                 <b className="viewer">참신함</b>
-//                                 <b className="viewer">스토리가 좋음</b>
-//                             </div>
-//                             <div className="parent">
-//                                 <b className="viewer">30개 / 30%</b>
-//                                 <b className="viewer">17개 / 17%</b>
-//                                 <b className="viewer">10개 / 10%</b>
-//                             </div>
-//                         </div>
-//                     </div>
-//                     <div className="gkeywordmain-child" />
-//                     <div className="gkeywordgoodmain">
-//                         <div className="gkeywordgheader">
-//                             <b className="viewer">부정 키워드</b>
-//                             <b className="viewer">총 60개</b>
-//                         </div>
-//                         <div className="gkeywordbmain">
-//                             <b className="viewer">스토리가 너무 심오함</b>
-//                             <b className="b18">진부함</b>
-//                             <b className="b19">장르가 마이너함</b>
-//                         </div>
-//                         <div className="frame-parent">
-//                             <div className="parent">
-//                                 <b className="viewer">진부함</b>
-//                                 <b className="viewer">장르가 마이너함</b>
-//                                 <b className="viewer">스토리가 너무 심오함</b>
-//                             </div>
-//                             <div className="parent">
-//                                 <b className="viewer">12개 / 20%</b>
-//                                 <b className="viewer">10개 / 16.7%</b>
-//                                 <b className="viewer">6개 / 10%</b>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className="gcalchart">
-//                     <b className="viewer">월별 점수 추이</b>
-//                     <img className="image-1-icon" alt="" src="image 1.png" />
-//                 </div>
-//                 <div className="gcalchart">
-//                     <b className="viewer">게임 통계</b>
-//                     <div className="gstatsub">
-//                         <img
-//                             className="image-1-icon1"
-//                             alt=""
-//                             src="image 1.png"
-//                         />
-//                         <div className="gstattxtmain">
-//                             <div className="gstattxtheader">
-//                                 <b className="viewer">평균 :</b>
-//                                 <b className="viewer">상위 10% :</b>
-//                                 <b className="viewer">중위 :</b>
-//                                 <b className="viewer">표준편차 :</b>
-//                             </div>
-//                             <div className="gstattxtfooter">
-//                                 <b className="viewer">100시간</b>
-//                                 <b className="viewer">537시간</b>
-//                                 <b className="viewer">130시간</b>
-//                                 <b className="viewer">171.15</b>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <div className="ginfomainfooter">
-//                     <b className="viewer">비슷한 게임</b>
-//                     <div className="ginfomainfooteralign">
-//                         <div className="product-info-card">
-//                             <img
-//                                 className="image-icon1"
-//                                 alt=""
-//                                 src="image.png"
-//                             />
-//                             <div className="body">
-//                                 <div className="text">
-//                                     <b className="text1">Palworld / 팰월드</b>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="product-info-card">
-//                             <img
-//                                 className="image-icon1"
-//                                 alt=""
-//                                 src="image.png"
-//                             />
-//                             <div className="body">
-//                                 <div className="text">
-//                                     <b className="text1">
-//                                         Monster Hunter Wilds
-//                                     </b>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                         <div className="product-info-card">
-//                             <img
-//                                 className="image-icon1"
-//                                 alt=""
-//                                 src="image.png"
-//                             />
-//                             <div className="body">
-//                                 <div className="text">
-//                                     <b className="text1">Ready or Not</b>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default GameInfoF;

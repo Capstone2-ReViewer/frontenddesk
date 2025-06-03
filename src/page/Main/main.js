@@ -239,16 +239,16 @@
 // export default Main;
 
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./main.css";
 
 const Main = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [keyList, setKeyList] = useState([]);
     const [keyword, setKeyword] = useState("");
     const [keyItems, setKeyItems] = useState([]);
     const [isEmpty, setisEmpty] = useState(true);
+    const [gRankingList, setGRankingList] = useState(null);
     useEffect(() => {
         const fetchGameSListData = async () => {
             try {
@@ -264,14 +264,34 @@ const Main = () => {
         };
 
         fetchGameSListData();
+
+        const fetchRankingData = async () => {
+            try {
+                if (sessionStorage.getItem("userId")) {
+                    const response = await fetch(
+                        `http://localhost:8080/ranking/user-tag/${sessionStorage.getItem(
+                            "userId"
+                        )}`
+                    );
+                    const data = await response.json();
+                    console.log(data);
+                    setGRankingList(data);
+                } else {
+                    const response = await fetch(
+                        `http://localhost:8080/ranking`
+                    );
+                    const data = await response.json();
+                    console.log(data);
+                    setGRankingList(data);
+                }
+            } catch (error) {
+                console.error("Error fetching GameInfo Data:", error);
+            }
+        };
+
+        fetchRankingData();
     }, []);
-    // const updateData = async () => {
-    //     let b = keyList?.filter(
-    //         (keyList) => keyList.name.includes(keyword) === true
-    //     );
-    //     // console.log(b);
-    //     setKeyItems(b);
-    // };
+
     useEffect(() => {
         const debounce = setTimeout(() => {
             console.log(keyList);
@@ -288,29 +308,39 @@ const Main = () => {
         };
     }, [keyword, keyList]);
 
-    // const handleGameInfoView = (appid) => {
-    //     navigate(`/gameinfo/${appid}`);
-    // };
+    if (!gRankingList) {
+        return <div>Loading...</div>;
+    }
 
-    // const handleGRanking = () => {
-    //     navigate(`/gameranking`);
-    // };
+    const handleGRanking = () => {
+        navigate(`/gameranking`);
+    };
 
-    // const handleUser = () => {
-    //     navigate(`/mypage`);
-    // };
+    const handleUser = () => {
+        navigate(`/mypage`);
+    };
 
-    // const handleLogin = () => {
-    //     navigate(`login`);
-    // };
+    const handleLogin = () => {
+        navigate(`/login`);
+    };
 
     // const handleSearch = () => {};
 
     return (
         <div className="main">
-            <div className="loginbutton">
-                <b className="button">로그인 / 회원가입</b>
-            </div>
+            {sessionStorage.getItem("userId") ? (
+                <b className="loginbutton">
+                    <b className="button" onClick={handleUser}>
+                        마이페이지
+                    </b>
+                </b>
+            ) : (
+                <b className="loginbutton">
+                    <b className="button" onClick={handleLogin}>
+                        로그인 / 회원가입
+                    </b>
+                </b>
+            )}
             <div className="mainsearchbar">
                 <div className="stateLayer">
                     {/* <input className="content">
@@ -339,66 +369,81 @@ const Main = () => {
                     </div> */}
                 </div>
             </div>
-            <div className="sbarlistmainf">
-                {/* <div className="sbarlistsubf">
+            {/* <div className="sbarlistsubf">
                     <b className="sbarlisttxt">Counter-Strike 2</b>
                 </div> */}
-                {isEmpty ? (
-                    keyItems.length > 0 &&
-                    keyword &&
-                    keyItems.map((keyItems, index) => (
-                        <div key={index} className="sbarlistsubf">
-                            <Link to={`/gameinfo/${keyItems.appid}`}>
-                                <b className="sbarlisttxt">{keyItems.name}</b>
-                            </Link>
-                        </div>
-                    ))
-                ) : (
-                    <div className="sbarlistsubf">
-                        <b className="sbarlisttxt">앗! 검색 내용이 없어요!</b>
+            {isEmpty ? (
+                keyItems.length > 0 &&
+                keyword && (
+                    <div className="sbarlistmainf">
+                        {keyItems.map((keyItems, index) => (
+                            <div key={index} className="sbarlistsubf">
+                                <Link to={`/gameinfo/${keyItems.appid}`}>
+                                    <b className="sbarlisttxt">
+                                        {keyItems.name}
+                                    </b>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
-                )}
-            </div>
+                )
+            ) : (
+                <div className="sbarlistsubf">
+                    <b className="sbarlisttxt">앗! 검색 내용이 없어요!</b>
+                </div>
+            )}
             <div className="mainunderf">
                 <div className="mainunderinfo">
                     <div className="productInfoCard">
-                        {/* <img
-                            className="imageIcon"
-                            alt=""
-                            src={keyList.i}
-                        /> */}
-                        <div className="body">
-                            <div className="text">
-                                <b className="text1">Palworld / 팰월드</b>
+                        <Link to={`/gameinfo/${gRankingList[0].appid}`}>
+                            <img
+                                className="imageIcon"
+                                alt=""
+                                src={gRankingList[0].image}
+                            />
+                            <div className="body">
+                                <div className="text">
+                                    <b className="text1">
+                                        {gRankingList[0].name}
+                                    </b>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="productInfoCard">
-                        {/* <img
-                            className="imageIcon"
-                            alt=""
-                            src="image.png"
-                        /> */}
-                        <div className="body">
-                            <div className="text">
-                                <b className="text1">Monster Hunter Wilds</b>
+                        <Link to={`/gameinfo/${gRankingList[1].appid}`}>
+                            <img
+                                className="imageIcon"
+                                alt=""
+                                src={gRankingList[1].image}
+                            />
+                            <div className="body">
+                                <div className="text">
+                                    <b className="text1">
+                                        {gRankingList[1].name}
+                                    </b>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className="productInfoCard">
-                        {/* <img
-                            className="imageIcon"
-                            alt=""
-                            src="image.png"
-                        /> */}
-                        <div className="body">
-                            <div className="text">
-                                <b className="text1">Ready or Not</b>
+                        <Link to={`/gameinfo/${gRankingList[2].appid}`}>
+                            <img
+                                className="imageIcon"
+                                alt=""
+                                src={gRankingList[2].image}
+                            />
+                            <div className="body">
+                                <div className="text">
+                                    <b className="text1">
+                                        {gRankingList[2].name}
+                                    </b>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                 </div>
-                <div className="grankingbutton">
+                <div className="grankingbutton" onClick={handleGRanking}>
                     <b className="granking">게임순위표 보러가기</b>
                 </div>
             </div>
