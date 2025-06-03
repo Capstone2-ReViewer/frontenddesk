@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "./page/Main/main";
 import GameRankingF from "./page/GameRankingView/gamerankingview";
+import GameRankingPerF from "./page/GameRankingPerView/gamerankingperview";
 import GameInfoF from "./page/GameInfo/gameinfo";
 import GameCompareF from "./page/GameCompare/gamecompare";
 import LoginF from "./page/Login/login";
@@ -15,6 +16,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/gameranking" element={<GameRankingF />} />
+            <Route path="/pergameranking" element={<GameRankingPerF />} />
             <Route path="/gameinfo" element={<GameInfoF />} />
             <Route path="/gameinfo/:appid" element={<GameInfoF />} />
             <Route path="/gamecompare" element={<GameCompareF />} />

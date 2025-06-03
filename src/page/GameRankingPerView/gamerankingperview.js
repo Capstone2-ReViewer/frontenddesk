@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 //import image2 from "./image-2.png";
 //import image3 from "./image-3.png";
 //import image from "./image.png";
-import "./gamerankingview.css";
+import "./gamerankingperview.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const GameRankingF = () => {
+const GameRankingPerF = () => {
     // const url = process.env.DB_CONN_URL;
     const navigate = useNavigate();
     const [gRankingList, setGRankingList] = useState(null);
@@ -16,8 +16,13 @@ const GameRankingF = () => {
     useEffect(() => {
         const fetchRankingData = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/ranking`);
+                const response = await fetch(
+                    `http://localhost:8080/ranking/user-tag/${sessionStorage.getItem(
+                        "userId"
+                    )}`
+                );
                 const data = await response.json();
+                console.log("로그인");
                 console.log(data);
                 setGRankingList(data);
             } catch (error) {
@@ -150,4 +155,4 @@ const GameRankingF = () => {
     );
 };
 
-export default GameRankingF;
+export default GameRankingPerF;

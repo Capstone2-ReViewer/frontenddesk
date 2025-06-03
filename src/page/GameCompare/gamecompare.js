@@ -3,6 +3,7 @@ import "./gamecompare.css";
 import { useEffect, useState } from "react";
 
 const GameCompareF = () => {
+    // const url = process.env.DB_CONN_URL;
     const navigate = useNavigate();
     const [gcomList, setGcomList] = useState(null);
 

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const UserInF = () => {
+    // const url = process.env.DB_CONN_URL;
     const [cpId, setcpId] = useState("");
     const [cpPw, setcpPw] = useState("");
     const [cpPwCheck, setcpPwCheck] = useState("");
@@ -95,7 +96,7 @@ const UserInF = () => {
             };
             console.log(JSON.stringify(data));
             const response = await fetch(
-                "http://localhost:8080/api/user/signup",
+                `http://localhost:8080/api/user/signup`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

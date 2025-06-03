@@ -24,6 +24,7 @@ ChartJS.register(
 );
 
 const GameInfoF = () => {
+    // const url = process.env.DB_CONN_URL;
     const navigate = useNavigate();
     const { appid } = useParams();
     const [gameInfoData, setGameInfoData] = useState(null);

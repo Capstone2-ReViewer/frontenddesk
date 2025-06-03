@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./mypage.css";
 
 const MypageF = () => {
+    // const url = process.env.DB_CONN_URL;
     const navigate = useNavigate();
     const handleMain = () => {
         navigate(`/`);

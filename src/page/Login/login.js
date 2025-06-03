@@ -4,6 +4,7 @@ import "./login.css";
 import { useNavigate } from "react-router-dom";
 
 const LoginF = () => {
+    // const url = process.env.DB_CONN_URL;
     const [logId, setlogId] = useState("");
     const [logPw, setlogPw] = useState("");
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const LoginF = () => {
                 password: logPw,
             };
             const response = await fetch(
-                "http://localhost:8080/api/user/login",
+                `http://localhost:8080/api/user/login`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

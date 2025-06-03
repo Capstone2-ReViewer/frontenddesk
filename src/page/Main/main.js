@@ -243,6 +243,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./main.css";
 
 const Main = () => {
+    // const url = process.env.DB_CONN_URL;
     const navigate = useNavigate();
     const [keyList, setKeyList] = useState([]);
     const [keyword, setKeyword] = useState("");
@@ -314,6 +315,13 @@ const Main = () => {
 
     const handleGRanking = () => {
         navigate(`/gameranking`);
+    };
+    const handlePerGRanking = () => {
+        if (!sessionStorage.getItem("userId")) {
+            alert("로그인 후 이용해주세요");
+        } else {
+            navigate(`/pergameranking`);
+        }
     };
 
     const handleUser = () => {
@@ -442,6 +450,9 @@ const Main = () => {
                             </div>
                         </Link>
                     </div>
+                </div>
+                <div className="pergrankingbutton" onClick={handlePerGRanking}>
+                    <b className="granking">맞춤순위표 보러가기</b>
                 </div>
                 <div className="grankingbutton" onClick={handleGRanking}>
                     <b className="granking">게임순위표 보러가기</b>
