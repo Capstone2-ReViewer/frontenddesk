@@ -16,6 +16,9 @@
     justify-content: center;
     padding: 12px;
     color: #1d1b20;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .myPagebutton {
@@ -32,6 +35,9 @@
     justify-content: center;
     padding: 12px;
     color: #1d1b20;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .supportingText {
@@ -170,6 +176,9 @@
     text-align: center;
     color: #1d1b20;
     margin-left: -35px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .pergrankingbutton {
     width: 47px;
@@ -187,6 +196,9 @@
     padding: 12px;
     text-align: center;
     color: #1d1b20;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .mainunderf {
     position: absolute;

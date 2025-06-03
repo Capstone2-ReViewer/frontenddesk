@@ -37,6 +37,9 @@
     align-items: center;
     justify-content: center;
     padding: 12px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 .ginfofooter {
     align-self: stretch;
