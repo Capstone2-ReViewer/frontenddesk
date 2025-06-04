@@ -16,7 +16,9 @@ const GameRankingF = () => {
     useEffect(() => {
         const fetchRankingData = async () => {
             try {
-                const response = await fetch(`http://localhost:8080/ranking`);
+                const response = await fetch(
+                    `http://ryurika.asuscomm.com:20000/ranking`
+                );
                 const data = await response.json();
                 console.log(data);
                 setGRankingList(data);

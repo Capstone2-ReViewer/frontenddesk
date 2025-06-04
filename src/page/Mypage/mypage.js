@@ -15,6 +15,7 @@ const MypageF = () => {
         navigate(`/gamecompare`);
     };
     const handleUserLogout = () => {
+        alert("로그아웃되었습니다.");
         sessionStorage.clear();
         navigate(`/`);
     };
@@ -22,7 +23,7 @@ const MypageF = () => {
     const handleUserExit = async () => {
         try {
             const response = await fetch(
-                `http://localhost:8080/api/user/delete?userId=${sessionStorage.getItem(
+                `http://ryurika.asuscomm.com:20000/api/user/delete?userId=${sessionStorage.getItem(
                     "userId"
                 )}`,
                 {

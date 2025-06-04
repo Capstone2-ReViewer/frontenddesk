@@ -253,7 +253,9 @@ const Main = () => {
     useEffect(() => {
         const fetchGameSListData = async () => {
             try {
-                const res = await fetch(`http://localhost:8080/simple-list`);
+                const res = await fetch(
+                    `http://ryurika.asuscomm.com:20000/simple-list`
+                );
                 const data = await res.json();
                 console.log(data);
                 setKeyList(data);
@@ -270,7 +272,7 @@ const Main = () => {
             try {
                 if (sessionStorage.getItem("userId")) {
                     const response = await fetch(
-                        `http://localhost:8080/ranking/user-tag/${sessionStorage.getItem(
+                        `http://ryurika.asuscomm.com:20000/ranking/user-tag/${sessionStorage.getItem(
                             "userId"
                         )}`
                     );
@@ -279,7 +281,7 @@ const Main = () => {
                     setGRankingList(data);
                 } else {
                     const response = await fetch(
-                        `http://localhost:8080/ranking`
+                        `http://ryurika.asuscomm.com:20000/ranking`
                     );
                     const data = await response.json();
                     console.log(data);

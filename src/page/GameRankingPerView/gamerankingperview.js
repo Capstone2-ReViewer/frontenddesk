@@ -17,7 +17,7 @@ const GameRankingPerF = () => {
         const fetchRankingData = async () => {
             try {
                 const response = await fetch(
-                    `http://localhost:8080/ranking/user-tag/${sessionStorage.getItem(
+                    `http://ryurika.asuscomm.com:20000/ranking/user-tag/${sessionStorage.getItem(
                         "userId"
                     )}`
                 );

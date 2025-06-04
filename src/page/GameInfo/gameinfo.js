@@ -46,7 +46,7 @@ const GameInfoF = () => {
                 // const data = await response.json();
                 // setGameInfoData(data);
                 const response = await fetch(
-                    `http://localhost:8080/api/games/${appid}`
+                    `http://ryurika.asuscomm.com:20000/api/games/${appid}`
                 );
                 const data = await response.json();
                 console.log(data);
@@ -57,7 +57,7 @@ const GameInfoF = () => {
                 setGameGenreList(data.genres);
                 setGameNegawordList(data.negaWord);
                 setGamePosiwordList(data.posiWord);
-                setscorebydate(data.scoreByDate);
+                setscorebydate(data.scoreByDate || []);
                 // if (data.scoreByDate) {
                 //     setYearMonthList(
                 //         data.scoreByDate.map((item) => item.yearMonth)
@@ -86,7 +86,7 @@ const GameInfoF = () => {
     }, [scorebydate]); // scorebydate가 변경될 때만 실행됨
 
     useEffect(() => {
-        if (yearMonthList.length > 0 && averageScoreList.length > 0) {
+        if (yearMonthList !== 0 && averageScoreList !== 0) {
             setChartData({
                 labels: yearMonthList,
                 datasets: [
@@ -115,7 +115,7 @@ const GameInfoF = () => {
     const fetchComData = async () => {
         try {
             const response = await fetch(
-                `http://localhost:8080/wishlist?userId=${sessionStorage.getItem(
+                `http://ryurika.asuscomm.com:20000/wishlist?userId=${sessionStorage.getItem(
                     "userId"
                 )}&gameId=${appid}`,
                 {
@@ -210,7 +210,7 @@ const GameInfoF = () => {
                             {/* <b className="infoviewer">스토리가 좋음</b>
                             <b className="infob7">재밌음</b>
                             <b className="infob8">참신함</b> */}
-                            {gamePosiwordList.length !== 0 ? (
+                            {gamePosiwordList !== 0 ? (
                                 gamePosiwordList.map(
                                     (gamePosiwordList, index) => (
                                         <b
@@ -263,7 +263,7 @@ const GameInfoF = () => {
                             {/* <b className="infoviewer">스토리가 너무 심오함</b>
                             <b className="infob18">진부함</b>
                             <b className="infob19">장르가 마이너함</b> */}
-                            {gameNegawordList.length !== 0 ? (
+                            {gameNegawordList !== 0 ? (
                                 gameNegawordList.map(
                                     (gameNegawordList, index) => (
                                         <div
@@ -311,15 +311,19 @@ const GameInfoF = () => {
                 <div className="gcalchart">
                     <b className="infoviewer">월별 점수 추이</b>
                     {/* <img className="infoimage1Icon" alt="" src="image 1.png" /> */}
-                    {chartData && (
-                        <div className="infoimage1Icon">
-                            <Line
-                                id="chartCanvas"
-                                key={chartKey}
-                                data={chartData}
-                                options={{ responsive: true }}
-                            />
-                        </div>
+                    {scorebydate !== 0 ? (
+                        chartData && (
+                            <div className="infoimage1Icon">
+                                <Line
+                                    id="chartCanvas"
+                                    key={chartKey}
+                                    data={chartData}
+                                    options={{ responsive: true }}
+                                />
+                            </div>
+                        )
+                    ) : (
+                        <div className="infoimage1Icon">차트 없음</div>
                     )}
                 </div>
                 <div className="gcalchart">
@@ -327,20 +331,22 @@ const GameInfoF = () => {
                     <div className="gstatsub">
                         <div className="gstattxtmain">
                             <div className="gstattxtheader">
-                                <b className="infoviewer">평균 :</b>
+                                <b className="infoviewer">평균 점수 :</b>
                                 <b className="infoviewer">상위 10% :</b>
                                 <b className="infoviewer">평균 플레이타임 :</b>
                                 {/* <b className="infoviewer">표준편차 :</b> */}
                             </div>
                             <div className="gstattxtfooter">
                                 <b className="infoviewer">
-                                    {gameInfoData.scoreTrend.average}시간
+                                    {gameInfoData.scoreTrend.average || null}
                                 </b>
                                 <b className="infoviewer">
-                                    {gameInfoData.scoreTrend.top10Percent}시간
+                                    {gameInfoData.scoreTrend.top10Percent ||
+                                        null}
+                                    시간
                                 </b>
                                 <b className="infoviewer">
-                                    {gameInfoData.scoreTrend.avg}시간
+                                    {gameInfoData.scoreTrend.avg || null}시간
                                 </b>
                                 {/* <b className="infoviewer">
                                     {gameInfoData.scoreTrend.stdDev}
