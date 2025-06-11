@@ -46,7 +46,7 @@ const GameInfoF = () => {
                 // const data = await response.json();
                 // setGameInfoData(data);
                 const response = await fetch(
-                    `http://ryurika.asuscomm.com:20000/api/games/${appid}`
+                    `http://localhost:8080/api/games/${appid}`
                 );
                 const data = await response.json();
                 console.log(data);
@@ -115,7 +115,7 @@ const GameInfoF = () => {
     const fetchComData = async () => {
         try {
             const response = await fetch(
-                `http://ryurika.asuscomm.com:20000/wishlist?userId=${sessionStorage.getItem(
+                `http://localhost:8080/wishlist?userId=${sessionStorage.getItem(
                     "userId"
                 )}&gameId=${appid}`,
                 {

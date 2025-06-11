@@ -16,7 +16,7 @@ const LoginF = () => {
                 password: logPw,
             };
             const response = await fetch(
-                `http://ryurika.asuscomm.com:20000/api/user/login`,
+                `http://localhost:8080/api/user/login`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

@@ -23,7 +23,7 @@ const MypageF = () => {
     const handleUserExit = async () => {
         try {
             const response = await fetch(
-                `http://ryurika.asuscomm.com:20000/api/user/delete?userId=${sessionStorage.getItem(
+                `http://localhost:8080/api/user/delete?userId=${sessionStorage.getItem(
                     "userId"
                 )}`,
                 {

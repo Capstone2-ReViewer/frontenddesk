@@ -11,7 +11,7 @@ const GameCompareF = () => {
         const fetchGameInfoData = async () => {
             try {
                 const response = await fetch(
-                    `http://ryurika.asuscomm.com:20000/wishlist/compare/${sessionStorage.getItem(
+                    `http://localhost:8080/wishlist/compare/${sessionStorage.getItem(
                         "userId"
                     )}`
                 );
@@ -29,7 +29,7 @@ const GameCompareF = () => {
     const handleComDel = async (appid) => {
         try {
             const response = await fetch(
-                `http://ryurika.asuscomm.com:20000/wishlist?userId=${sessionStorage.getItem(
+                `http://localhost:8080/wishlist?userId=${sessionStorage.getItem(
                     "userId"
                 )}&gameId=${appid}`,
                 {

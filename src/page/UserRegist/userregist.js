@@ -96,7 +96,7 @@ const UserInF = () => {
             };
             console.log(JSON.stringify(data));
             const response = await fetch(
-                `http://ryurika.asuscomm.com:20000/api/user/signup`,
+                `http://localhost:8080/api/user/signup`,
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
